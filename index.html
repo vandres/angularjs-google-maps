@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="myapp">
   <head>
+    <title>AngularJS Google Maps V3 Directive</title>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,12 +11,12 @@
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>AngularJS Google Maps V3 Directive</title>
-    <script src="javascripts/angular.js"></script>
-    <script src="https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngd.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=weather,visualization,panoramio"></script>
+    <script src="https://code.angularjs.org/1.2.26/angular.min.js"></script>
+    <script src="https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngd.min.js"></script>
     <script src="https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngdPlnkr.js"></script>
+
     <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script>
       var app = angular.module("myapp",["ngMap", "ngd"]);
     </script>
@@ -46,7 +47,7 @@
       </a>
 
       <p>
-        <ul ngd-viewport-nav ngd-list>
+        <ul ngd-viewport-nav>
           <li><a href="#map">map</a></li>
           <li><a href="#marker">marker</a></li>
           <li><a href="#shape">shape</a></li>

@@ -1,0 +1,16 @@
+<a id="event-arguments" ngd-viewport-el></a> 
+<h2>
+  Assigning arguments in UI events
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/event-arguments">Google Source</a>
+</h2>
+Click map to place markers
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="event-arguments.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="EventArgumentsCtrl">
+      <map zoom="4" center="-25.363882, 131.044922" on-click="placeMarker()">
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>

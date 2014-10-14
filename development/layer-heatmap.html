@@ -1,0 +1,37 @@
+<a id="layer-heatmap" ngd-viewport-el></a> 
+<h2> Heatmaps
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <style ngd-plnkr-code="css">
+    div[ng-controller=LayerHeatmapCtrl] {
+      position:relative;
+    }
+    div[ng-controller=LayerHeatmapCtrl] #panel{
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="js" src="layer-heatmap.js"></div>
+  <div ngd-plnkr-lib="taxi-data.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerHeatmapCtrl">
+      <div id="panel">
+        <button ng-click="toggleHeatmap()">Toggle Heatmap</button>
+        <button ng-click="changeGradient()">Change gradient</button>
+        <button ng-click="changeRadius()">Change radius</button>
+        <button ng-click="changeOpacity()">Change opacity</button>
+      </div>
+      <map zoom="13" center="37.774546, -122.433523" map-type-id="SATELLITE">
+        <heatmap-layer id="foo" data="taxiData"></heatmap>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>

@@ -1,0 +1,36 @@
+<a id="marker-animations-iteration" ngd-viewport-el></a> 
+<h2> Marker animations with setTimeout()
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-animations-iteration">Google Source</a>
+</h2>
+If you're adding a number of markers, you may want to
+drop them on the map consecutively rather than all at once.
+This example shows how to use setTimeout() to space
+your markers' animation.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="marker-animations-iteration.js"></div>
+  <style ngd-plnkr-code="css">
+    div[ng-controller] {
+      position: relative;
+    }
+    div[ng-controller] #panel {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="MarkerAnimationsIterationCtrl">
+      <div id="panel">
+        <button id="drop" ng-click="addMarker()">Drop Markers</button>
+       </div>
+      <map center="52.520816, 13.410186" zoom="12">
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>

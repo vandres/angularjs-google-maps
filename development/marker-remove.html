@@ -1,0 +1,37 @@
+<a id="marker-remove" ngd-viewport-el></a> 
+<h2>
+  Remove Markers
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-remove">Google Source</a>
+</h2>
+Click on map to add a marker. Click button to show, hide, or remove markers<br/>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="marker-remove.js"></div>
+  <style ngd-plnkr-code="css">
+    div[ng-controller='MarkerRemoveCtrl'] {
+      position: relative;
+    }
+    div[ng-controller='MarkerRemoveCtrl'] #panel {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="MarkerRemoveCtrl">
+      <div id="panel">
+        <input ng-click="hideMarkers()" type=button value="Hide Markers">
+        <input ng-click="showMarkers()" type=button value="Show All Markers">
+        <input ng-click="deleteMarkers()" type=button value="Delete Markers">
+      </div>
+      <map center="37.7699298, -122.4469157" zoom="12" on-click="addMarker()">
+        <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>

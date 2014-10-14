@@ -3,3 +3,5 @@ nohup.out
 node_modules
 tmp
 *.log
+development/angularjs-directives
+development/app

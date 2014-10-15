@@ -34,13 +34,17 @@ gulp.task('bump:minor', ['build'], function() { bumpVersion('minor'); });
 gulp.task('bump:major', ['build'], function() { bumpVersion('major'); });
 
 
-gulp.task('copy', function() {
-  return gulp.src('./development/index.html')
-    .pipe(gulp.dest('.'));
-});
-
 gulp.task('build-html', function() {
-  return gulp.src('./development/index.html')
+  return gulp.src([
+      './development/index.html',
+      './development/basics.html',
+      './development/events.html',
+      './development/controls.html',
+      './development/styles.html',
+      './development/drawings.html',
+      './development/layers.html',
+      './development/maptypes.html'
+    ])
     /* replace source files to a single file */
     .pipe(replace(
       /<!-- build:js ([^ ]+) -->[^\!]+<!-- endbuild -->/gm, 
@@ -66,5 +70,5 @@ gulp.task('build-html', function() {
 });
 
 gulp.task('build', function(callback) {
-  runSequence('copy', 'build-html', callback);
+  runSequence('build-html', callback);
 });

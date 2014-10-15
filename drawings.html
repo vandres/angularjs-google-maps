@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+    <title>AngularJS Google Maps V3 Directive Drawings On Map</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=weather,visualization,panoramio"></script>
+    <script src="https://code.angularjs.org/1.2.26/angular.min.js"></script>
+    <script src="https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngd.min.js"></script>
+    <script src="https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngdPlnkr.js"></script>
+
+    <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
+    <script>
+      var app = angular.module("myapp",["ngMap", "ngd"]);
+      app.config(function(PlnkrDefaultProvider) {
+        PlnkrDefaultProvider.setLibs([ /* plunker default libraries */
+          "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=weather,visualization,panoramio",
+          "http://code.angularjs.org/1.2.25/angular.js",
+          "https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"
+        ]);
+      });
+      app.run(function($location, $rootScope) {
+        $rootScope.page = $location.absUrl().match(/\/(\w+).htm/)[1];
+      });
+    </script>
+  </head>
+
+  <body ngd-viewport>
+<!-- =================================================== -->
+<!--     <div ng-include="'partials/header.html'"></div> -->
+<!-- =================================================== -->
+    <header>
+      <div class="inner">
+        <a href="https://github.com/allenhwkim/angularjs-google-maps" class="button">
+          <img src="images/github-button.png" />
+          <div class="overlay">
+            <small>View project on</small> 
+            GitHub
+          </div>
+        </a>
+        <h1>Angularjs-Google-Maps</h1>
+        <h2>The Simplest Way of Showing A Map</h2>
+      </div>
+    </header>
+
+    <div ngd-viewport-nav ng-include="'partials/sidebar.html'"></div>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>Drawing On Map</h2>
+<!-- ======================================================= -->
+<!--           <div ng-include="'marker-simple.html'"></div> -->
+<!-- ======================================================= -->
+<a id="marker-simple" ngd-viewport-el></a> 
+<h2>Simple Marker
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="-25.363882,131.044922" zoom="4">
+      <marker position="-25.363882,131.044922" title="Hello World!"></marker>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="marker-remove.js"></script>
+<!-- ======================================================= -->
+<!--           <div ng-include="'marker-remove.html'"></div> -->
+<!-- ======================================================= -->
+<a id="marker-remove" ngd-viewport-el></a> 
+<h2>
+  Remove Markers
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-remove">Google Source</a>
+</h2>
+Click on map to add a marker. Click button to show, hide, or remove markers<br/>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="marker-remove.js"></div>
+  <style ngd-plnkr-code="css">
+    div[ng-controller='MarkerRemoveCtrl'] {
+      position: relative;
+    }
+    div[ng-controller='MarkerRemoveCtrl'] #panel {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="MarkerRemoveCtrl">
+      <div id="panel">
+        <input ng-click="hideMarkers()" type=button value="Hide Markers">
+        <input ng-click="showMarkers()" type=button value="Show All Markers">
+        <input ng-click="deleteMarkers()" type=button value="Delete Markers">
+      </div>
+      <map center="37.7699298, -122.4469157" zoom="12" on-click="addMarker()">
+        <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ===================================================== -->
+<!--           <div ng-include="'icon-simple.html'"></div> -->
+<!-- ===================================================== -->
+<a id="icon-simple" ngd-viewport-el></a> 
+<h2>Simple Icon
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/icon-somple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="4" center="-33, 151">
+      <marker position="-33.890542, 151.274856" icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"></marker>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="icon-complex.js"></script>
+<!-- ====================================================== -->
+<!--           <div ng-include="'icon-complex.html'"></div> -->
+<!-- ====================================================== -->
+<a id="icon-complex" ngd-viewport-el></a> 
+<h2>Complex Icon
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/icon-complex">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="icon-complex.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="IconComplexCtrl">
+      <map zoom="10" center="-33.9, 151.2">
+        <marker ng-repeat="beach in beaches"
+          icon="{{image}}"
+          shape="{{shape}}"
+          title="{{beach[0]}}" 
+          position="{{beach[1]}}, {{beach[2]}}" 
+          z-index="{{beach[3]}}"></marker>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="marker-animations.js"></script>
+<!-- =========================================================== -->
+<!--           <div ng-include="'marker-animations.html'"></div> -->
+<!-- =========================================================== -->
+<a id="marker-animations" ngd-viewport-el></a> 
+<h2> Marker Animations
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-animations">Google Source</a>
+</h2>
+The following example creates a marker in Stockholm, Sweden
+using a DROP animation. Clicking on the marker will toggle
+the animation between a BOUNCE animation and no animation.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="marker-animations.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="MarkerAnimationsCtrl">
+      <map center="59.32522, 18.07002" zoom="13">
+        <marker position="59.327383, 18.06747" 
+          on-click="toggleBounce()"
+          animation="DROP"
+          draggable="true"></marker>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="marker-animations-iteration.js"></script>
+<!-- ===================================================================== -->
+<!--           <div ng-include="'marker-animations-iteration.html'"></div> -->
+<!-- ===================================================================== -->
+<a id="marker-animations-iteration" ngd-viewport-el></a> 
+<h2> Marker animations with setTimeout()
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-animations-iteration">Google Source</a>
+</h2>
+If you're adding a number of markers, you may want to
+drop them on the map consecutively rather than all at once.
+This example shows how to use setTimeout() to space
+your markers' animation.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="marker-animations-iteration.js"></div>
+  <style ngd-plnkr-code="css">
+    div[ng-controller] {
+      position: relative;
+    }
+    div[ng-controller] #panel {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="MarkerAnimationsIterationCtrl">
+      <div id="panel">
+        <button id="drop" ng-click="addMarker()">Drop Markers</button>
+       </div>
+      <map center="52.520816, 13.410186" zoom="12">
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- =========================================================== -->
+<!--           <div ng-include="'infowindow-simple.html'"></div> -->
+<!-- =========================================================== -->
+<a id="infowindow-simple" ngd-viewport-el></a> 
+<h2>Info Windows
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple">Google Source</a>
+</h2>
+This example displays a marker at the center of Australia.
+When the user clicks the marker, an info window opens.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="-25.363882,131.044922" zoom="4">
+      <marker id="foo" position="-25.363882,131.044922"
+        on-click="showInfoWindow(event, 'bar')">
+      </marker>
+      <info-window id="bar" visible-on-marker="foo">
+        <div ng-non-bindable>
+          <div id="siteNotice"></div>
+          <h1 id="firstHeading" class="firstHeading">Uluru</h1>
+          <div id="bodyContent">
+            <p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large 
+            sandstone rock formation in the southern part of the 
+            Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi)
+            south west of the nearest large town, Alice Springs; 450&#160;km 
+            (280&#160;mi) by road. Kata Tjuta and Uluru are the two major
+            features of the Uluru - Kata Tjuta National Park. Uluru is
+            sacred to the Pitjantjatjara and Yankunytjatjara, the
+            Aboriginal people of the area. It has many springs, waterholes,
+            rock caves and ancient paintings. Uluru is listed as a World
+            Heritage Site.</p>
+            <p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">
+            http://en.wikipedia.org/w/index.php?title=Uluru</a> 
+            (last visited June 22, 2009).</p>
+          </div>
+        </div>
+      </info-window>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- =============================================================== -->
+<!--           <div ng-include="'infowindow-simple-max.html'"></div> -->
+<!-- =============================================================== -->
+<a id="infowindow-simple-max" ngd-viewport-el></a> 
+<h2>Info Windows with max. width
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="-25.363882,131.044922" zoom="4">
+      <marker id="foo" position="-25.363882,131.044922"
+        on-click="showInfoWindow(event, 'bar')">
+      </marker>
+      <info-window id="bar" max-width="200" visible-on-marker="foo">
+        <div ng-non-bindable>
+          <div id="siteNotice"></div>
+          <h1 id="firstHeading" class="firstHeading">Uluru</h1>
+          <div id="bodyContent">
+            <p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large 
+            sandstone rock formation in the southern part of the 
+            Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi)
+            south west of the nearest large town, Alice Springs; 450&#160;km 
+            (280&#160;mi) by road. Kata Tjuta and Uluru are the two major
+            features of the Uluru - Kata Tjuta National Park. Uluru is
+            sacred to the Pitjantjatjara and Yankunytjatjara, the
+            Aboriginal people of the area. It has many springs, waterholes,
+            rock caves and ancient paintings. Uluru is listed as a World
+            Heritage Site.</p>
+            <p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">
+            http://en.wikipedia.org/w/index.php?title=Uluru</a> 
+            (last visited June 22, 2009).</p>
+          </div>
+        </div>
+      </info-window>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ========================================================= -->
+<!--           <div ng-include="'polyline-simple.html'"></div> -->
+<!-- ========================================================= -->
+<a id="polyline-simple" ngd-viewport-el></a> 
+<h2> Simple Polyline
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+   <map zoom="3" center="0, -180" map-type-id="TERRAIN">
+     <shape name="polyline" 
+       path="[
+         [37.772323, -122.214897],
+         [21.291982, -157.821856],
+         [-18.142599, 178.431],
+         [-27.46758, 153.027892]
+       ]"
+       geodesic="true"
+       stroke-color="#FF0000"
+       stroke-opacity="1.0"
+       stroke-weight="2">
+     </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="polyline-remove.js"></script> 
+<!-- ========================================================= -->
+<!--           <div ng-include="'polyline-remove.html'"></div> -->
+<!-- ========================================================= -->
+<a id="polyline-remove" ngd-viewport-el></a> 
+<h2> Remove a polyline
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-remove">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <style ngd-plnkr-code="css">
+    div[ng-controller=PolylineRemoveCtrl] {
+      position: relative;
+    }
+    div[ng-controller=PolylineRemoveCtrl] #panel {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -90px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="js" src="polyline-remove.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="PolylineRemoveCtrl">
+      <div id="panel">
+        <input ng-click="removeLine()" type=button value="Remove Line">
+        <input ng-click="addLine()" type=button value="Restore Line">
+      </div>
+      <map zoom="3" center="0, -180" map-type-id="TERRAIN">
+        <shape name="polyline" id="foo"
+          path="[
+            [37.772323, -122.214897],
+            [21.291982, -157.821856],
+            [-18.142599, 178.431],
+            [-27.46758, 153.027892]
+          ]"
+          geodesic="true"
+          stroke-color="#FF0000"
+          stroke-opacity="1.0"
+          stroke-weight="2">
+        </shape>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="polyline-complex.js"></script> 
+<!-- ========================================================== -->
+<!--           <div ng-include="'polyline-complex.html'"></div> -->
+<!-- ========================================================== -->
+<a id="polyline-complex" ngd-viewport-el></a> 
+<h2>
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-complex">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="polyline-complex.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="PolylineComplexCtrl">
+      <map zoom="7" center="41.879535, -87.624333"
+        on-click="addMarkerAndPath()">
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ======================================================== -->
+<!--           <div ng-include="'polygon-simple.html'"></div> -->
+<!-- ======================================================== -->
+<a id="polygon-simple" ngd-viewport-el></a> 
+<h2> Simple Polygon
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="5" 
+      center="24.886436490787712, -70.2685546875" 
+      map-type-id="TERRAIN">
+     <shape name="polygon" 
+       paths="[
+         [25.774252, -80.190262],
+         [18.466465, -66.118292],
+         [32.321384, -64.75737],
+         [25.774252, -80.190262]
+       ]"
+       stroke-color="#FF0000"
+       stroke-opacity="0.8"
+       stroke-weight="2"
+       fill-color="#FF0000"
+       fill-opacity="0.35">
+     </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="polygon-arrays.js"></script> 
+<!-- ======================================================== -->
+<!--           <div ng-include="'polygon-arrays.html'"></div> -->
+<!-- ======================================================== -->
+<a id="polygon-arrays" ngd-viewport-el></a> 
+<h2> Polygon Arrays
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-arrays">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="polygon-arrays.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="PolygonArraysCtrl">
+      <map zoom="5" 
+        center="24.886436490787712, -70.2685546875" 
+        map-type-id="TERRAIN">
+       <shape name="polygon" 
+         on-click="showArrays()"
+         paths="[
+           [25.774252, -80.190262],
+           [18.466465, -66.118292],
+           [32.321384, -64.75737]
+         ]"
+         stroke-color="#FF0000"
+         stroke-opacity="0.8"
+         stroke-weight="2"
+         fill-color="#FF0000"
+         fill-opacity="0.35">
+       </shape>
+     </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- =========================================================== -->
+<!--           <div ng-include="'polygon-autoclose.html'"></div> -->
+<!-- =========================================================== -->
+<a id="polygon-autoclose" ngd-viewport-el></a> 
+<h2>Polygon Auto-completion
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-autoclose">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="5" 
+      center="24.886436490787712, -70.2685546875" 
+      map-type-id="TERRAIN">
+     <shape name="polygon" 
+       paths="[
+         [25.774252, -80.190262],
+         [18.466465, -66.118292],
+         [32.321384, -64.75737]
+       ]"
+       stroke-color="#FF0000"
+       stroke-opacity="0.8"
+       stroke-weight="2"
+       fill-color="#FF0000"
+       fill-opacity="0.35">
+     </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="circle-simple.js"></script>
+<!-- ======================================================= -->
+<!--           <div ng-include="'circle-simple.html'"></div> -->
+<!-- ======================================================= -->
+<a id="circle-simple" ngd-viewport-el></a> 
+<h2>Circle Simple
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/circle-simple">Google Source</a>
+</h2>
+This example creates circles on the map, representing populations in North America.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="circle-simple.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="CircleSimpleCtrl">
+      <map center="37.09024, -95.712891" zoom="4" mayTypeId="TERRAIN">
+        <shape name="circle" ng-repeat="city in cities"
+          stroke-color="#FF0000"
+          stroke-opacity="0.8"
+          stroke-weight="2"
+          fill-color="#FF0000"
+          fill-opacity="0.35"
+          center="{{city.position}}"
+          radius="{{getRadius(city.population)}}">
+        </shape>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ========================================================== -->
+<!--           <div ng-include="'rectangle-simple.html'"></div> -->
+<!-- ========================================================== -->
+<a id="rectangle-simple" ngd-viewport-el></a> 
+<h2>
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/rectangle-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="11" 
+      center="33.678176, -116.242568" 
+      map-type-id="TERRAIN">
+     <shape name="rectangle" 
+       stroke-color="#FF0000"
+       stroke-opacity="0.8"
+       stroke-weight="2"
+       fill-color="#FF0000"
+       fill-opacity="0.35"
+       bounds="[
+         [33.671068, -116.25128],
+         [33.685282, -116.233942]
+       ]">
+     </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="rectangle-zoom.js"></script>
+<!-- ======================================================== -->
+<!--           <div ng-include="'rectangle-zoom.html'"></div> -->
+<!-- ======================================================== -->
+<a id="rectangle-zoom" ngd-viewport-el></a> 
+<h2> Rectangle Zoom
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/CHANGE">Google Source</a>
+</h2>
+This example creates a rectangle based on the viewport on any 'zoom-changed' event.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="rectangle-zoom.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="RectangleZoomCtrl">
+      <map zoom="11" 
+        center="33.6803003, -116.173894" 
+        map-type-id="TERRAIN"
+        on-zoom_changed="zoomChanged()">
+        <shape name="rectangle" id="foo"
+          stroke-color="#FF0000"
+          stroke-opacity="0.8"
+          stroke-weight="2"
+          fill-color="#FF0000"
+          fill-opacity="0.35">
+        </shape>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ============================================================== -->
+<!--           <div ng-include="'user-editable-shapes.html'"></div> -->
+<!-- ============================================================== -->
+<a id="user-editable-shapes" ngd-viewport-el></a> 
+<h2>
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/user-editable-shapes">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="9" 
+      center="44.5452, -78.5389">
+     <shape name="rectangle" 
+       editable="true"
+       bounds="[ [44.490, -78.649], [44.599, -78.443] ]">
+     </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- =========================================================== -->
+<!--           <div ng-include="'polygon-draggable.html'"></div> -->
+<!-- =========================================================== -->
+<a id="polygon-draggable" ngd-viewport-el></a> 
+<h2> Draggable Polygons
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/polyggon-dragbable">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="1" center="24.886, -70.268" map-type-id="TERRAIN">
+     <shape name="polygon" 
+       paths="[[25.774, -80.190], [18.466, -66.118], [32.321, -64.757]]"
+       geodesic="true"
+       draggable="true"
+       stroke-color="#FF0000"
+       stroke-opacity="0.8"
+       stroke-weight="2"
+       fill-color="#FF0000"
+       fill-opacity="0.35">
+     </shape>
+     <shape name="polygon" 
+       paths="[[25.774, -60.190], [18.466, -46.118], [32.321, -44.757]]"
+       draggable="true"
+       geodesic="false"
+       stroke-color="#0000FF"
+       stroke-opacity="0.8"
+       stroke-weight="2"
+       fill-color="#0000FF"
+       fill-opacity="0.35">
+     </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="rectangle-event.js"></script>
+<!-- ========================================================= -->
+<!--           <div ng-include="'rectangle-event.html'"></div> -->
+<!-- ========================================================= -->
+<a id="rectangle-event" ngd-viewport-el></a> 
+<h2> Rectangle Event
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/rectangle-event">Google Source</a>
+</h2>
+   This example adds a user-editable rectangle to the map.
+   When the user changes the bounds of the rectangle,
+   an info window pops up displaying the new bounds.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="rectangle-event.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="RectangleEventCtrl">
+      <map zoom="9" center="44.5452, -78.5389">
+        <shape name="rectangle" 
+          editable="true"
+          draggable="true"
+          bounds="[[44.490,-78.649],[44.599,-78.443]]"
+          on-bounds_changed="boundsChanged()">
+        </shape>
+        <info-window id="foo">
+          <div ng-non-bindable>
+            <b>Rectangle moved.</b><br/>
+            New north-east corner: {{ne.lat()}}, {{ne.lng()}}<br/>
+            New south-west corner: {{sw.lat()}}, {{sw.lng()}}
+          </div>
+        </info-window>
+      </map>
+            <b>Rectangle moved.</b><br/>
+            New north-east corner: {{ne.lat()}}, {{ne.lng()}}<br/>
+            New south-west corner: {{sw.lat()}}, {{sw.lng()}}
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ============================================================== -->
+<!--           <div ng-include="'groundoverlay-simple.html'"></div> -->
+<!-- ============================================================== -->
+<a id="groundoverlay-simple" ngd-viewport-el></a> 
+<h2>Groundoverlay Simple
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/groundoverlay-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+   <map zoom="13" center="40.740, -74.18">
+     <shape name="image" 
+       url="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"
+       bounds="[[40.712216, -74.22655], [40.773941, -74.12544]]">
+     </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="overlay-remove.js"></script>
+<!-- ======================================================== -->
+<!--           <div ng-include="'overlay-remove.html'"></div> -->
+<!-- ======================================================== -->
+<a id="overlay-remove" ngd-viewport-el></a> 
+<h2> Remove Overlay
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-remove">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="overlay-remove.js"></div>
+  <style ngd-plnkr-code="css">
+    div[ng-controller=OverlayRemoveCtrl] {
+      position: relative;
+    }
+    div[ng-controller=OverlayRemoveCtrl] #panel {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -90px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="OverlayRemoveCtrl">
+      <div id="panel">
+        <input ng-click="remove()" type=button value="Remove overlay">
+        <input ng-click="add()" type=button value="Restore overlay">
+      </div>
+      <map zoom="13" center="40.740, -74.18">
+       <shape name="image" id="foo"
+         url="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"
+         bounds="[[40.712216, -74.22655], [40.773941, -74.12544]]">
+       </shape>
+     </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+
+ 
+          <script src="overlay-simple.js"></script>
+<!-- ======================================================== -->
+<!--           <div ng-include="'overlay-simple.html'"></div> -->
+<!-- ======================================================== -->
+<a id="overlay-simple" ngd-viewport-el></a> 
+<h2> Simple Overlay
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="overlay-simple.js"></div>
+  <div ngd-plnkr-lib="drawings/USGSOverlay.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="OverlaySimpleCtrl">
+      <map zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE"></map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="USGSOverlay.js"></script>
+          <script src="overlay-hideshow.js"></script>
+<!-- ========================================================== -->
+<!--           <div ng-include="'overlay-hideshow.html'"></div> -->
+<!-- ========================================================== -->
+<a id="overlay-hideshow" ngd-viewport-el></a> 
+<h2> Overlay show/hide
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-hideshow">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="overlay-hideshow.js"></div>
+  <div ngd-plnkr-lib="USGSOverlay.js"></div>
+  <style ngd-plnkr-code="css">
+    div[ng-controller=OverlayHideshowCtrl] {
+      position: relative;
+    }
+    div[ng-controller=OverlayHideshowCtrl] #panel {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -90px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="OverlayHideshowCtrl">
+      <div id="panel">
+        <input ng-click="toggleVisibility()" type=button value="Toggle Visibility">
+        <input ng-click="toggleDOMAttachment()" type=button value="Toggle DOM Attachment">
+      </div>
+      <map zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE">
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ================================================================== -->
+<!--           <div ng-include="'marker-symbol-predefined.html'"></div> -->
+<!-- ================================================================== -->
+<a id="marker-symbol-predefined" ngd-viewport-el></a> 
+<h2>
+  Marker Symbol Predefined
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-predefined">Google Source</a>
+</h2>
+  This example uses a symbol to add a vector-based icon to a marker.
+  The symbol uses one of the predefined vector paths ('CIRCLE') supplied by the
+  Google Maps JavaScript API.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="-25.363882,131.044922" zoom="4">
+      <marker position="-25.363882,131.044922" 
+        icon="{path:'CIRCLE', scale: 10}"
+        dragglele="true"></marker>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ============================================================== -->
+<!--           <div ng-include="'marker-symbol-custom.html'"></div> -->
+<!-- ============================================================== -->
+<a id="marker-symbol-custom" ngd-viewport-el></a> 
+<h2> Marker Symbol Custom
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-custom">Google Source</a>
+</h2>
+   This example uses SVG path notation to add a vector-based symbol
+   as the icon for a marker. The resulting icon is a star-shaped symbol
+   with a pale yellow fill and a thick yellow border.
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="-25.363882,131.044922" zoom="4">
+      <marker position="-25.363882,131.044922" 
+      icon="{
+        path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+        fillColor: 'yellow',
+        fillOpacity: 0.8,
+        scale: 1,
+        strokeColor: 'gold',
+        strokeWeight: 14
+      }"
+      dragglele="true"></marker>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+          <script src="overlay-symbol-animate.js"></script>
+<!-- ================================================================ -->
+<!--           <div ng-include="'overlay-symbol-animate.html'"></div> -->
+<!-- ================================================================ -->
+<a id="overlay-symbol-animate" ngd-viewport-el></a> 
+<h2> Animating Symbols
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-animate">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="overlay-symbol-animate.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="OverlaySymbolAnimateCtrl">
+      <map zoom="5" center="20.291, 153.027" map-type-id="TERRAIN">
+        <shape name="polyline" id="foo"
+           icons="[{
+             icon: {
+               path: 'CIRCLE',
+               scale: 8,
+               strokeColor: '#393'
+             },
+             offset: '100%'
+           }]"
+          path="[[22.291, 153.027], [18.291, 153.027]]">
+        </shape>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- ============================================================== -->
+<!--           <div ng-include="'overlay-symbol-arrow.html'"></div> -->
+<!-- ============================================================== -->
+<a id="overlay-symbol-arrow" ngd-viewport-el></a> 
+<h2> Arrows (Symbols)
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-arrow">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
+      <shape name="polyline" id="foo"
+        path="[[22.291, 153.027], [18.291, 153.027]]"
+        icons="[{
+          icon: {
+            path: 'FORWARD_CLOSED_ARROW'
+          },
+          offset: '100%'
+        }]">
+      </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- =============================================================== -->
+<!--           <div ng-include="'overlay-symbol-custom.html'"></div> -->
+<!-- =============================================================== -->
+<a id="overlay-symbol-custom" ngd-viewport-el></a> 
+<h2> Custom Symbols 
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-custom">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
+      <shape name="polyline" id="foo"
+        path="[[22.291, 153.027], [18.291, 153.027]]"
+        icons="[
+          {
+            icon: {
+              path: 'M -2,0 0,-2 2,0 0,2 z',
+              strokeColor: '#F00',
+              fillColor: '#F00',
+              fillOpacity: 1
+            },
+            offset: '0%'
+          },
+          {
+            icon: {
+              path: 'M -1,0 A 1,1 0 0 0 -3,0 1,1 0 0 0 -1,0M 1,0 A 1,1 0 0 0 3,0 1,1 0 0 0 1,0M -3,3 Q 0,5 3,3',
+              strokeColor: '#00F',
+              rotation: 45
+            },
+            offset: '50%'
+          },
+          {
+            icon: {
+              path: 'M -2,-2 2,2 M 2,-2 -2,2',
+              strokeColor: '#292',
+              strokeWeight: 4
+            },
+            offset: '100%'
+          }
+        ]">
+      </shape>
+   </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+<!-- =============================================================== -->
+<!--           <div ng-include="'overlay-symbol-dashed.html'"></div> -->
+<!-- =============================================================== -->
+<a id="overlay-symbol-dashed" ngd-viewport-el></a> 
+<h2> Dashed Lines (Symbols)
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-dashed">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+     <map zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
+        <shape name="polyline" id="foo"
+          path="[[22.291, 153.027], [18.291, 153.027]]"
+          stroke-opacity="0",
+          icons="[{
+            icon: {
+              path: 'M 0,-1 0,1',
+              strokeOpacity: 1,
+              scale: 4
+            },
+            offset: '0',
+            repeat: '20px'
+          }]">
+        </shape>
+     </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+ 
+        </section>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+  <head>
+    <title>AngularJS Google Maps V3 Directive Layers</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=weather,visualization"></script>
+    <script src="https://code.angularjs.org/1.2.26/angular.min.js"></script>
+    <script src="https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngd.min.js"></script>
+    <script src="https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngdPlnkr.js"></script>
+
+    <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
+    <script>
+      var app = angular.module("myapp",["ngMap", "ngd"]);
+      app.config(function(PlnkrDefaultProvider) {
+        PlnkrDefaultProvider.setLibs([ /* plunker default libraries */
+          "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=weather,visualization,panoramio",
+          "http://code.angularjs.org/1.2.25/angular.js",
+          "https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"
+        ]);
+      });
+      app.run(function($location, $rootScope) {
+        $rootScope.page = $location.absUrl().match(/\/(\w+).htm/)[1];
+      });
+    </script>
+  </head>
+
+  <body ngd-viewport>
+<!-- =================================================== -->
+<!--     <div ng-include="'partials/header.html'"></div> -->
+<!-- =================================================== -->
+    <header>
+      <div class="inner">
+        <a href="https://github.com/allenhwkim/angularjs-google-maps" class="button">
+          <img src="images/github-button.png" />
+          <div class="overlay">
+            <small>View project on</small> 
+            GitHub
+          </div>
+        </a>
+        <h1>Angularjs-Google-Maps</h1>
+        <h2>The Simplest Way of Showing A Map</h2>
+      </div>
+    </header>
+
+    <div ngd-viewport-nav ng-include="'partials/sidebar.html'"></div>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>Layers</h2>
+<!-- =================================================== -->
+<!--           <div ng-include="'layer-kml.html'"></div> -->
+<!-- =================================================== -->
+<a id="layer-kml" ngd-viewport-el></a> 
+<h2>KML Layer
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-kml">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+      <map zoom="11" center="41.875696,-87.624207">
+        <kml-layer url="http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml"></kml-layer>
+      </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+          <script src="layer-kml-features.js"></script>
+<!-- ============================================================ -->
+<!--           <div ng-include="'layer-kml-features.html'"></div> -->
+<!-- ============================================================ -->
+<a id="layer-kml-features" ngd-viewport-el></a> 
+<h2> KML feature details
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-kml-features">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="layer-kml-features.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerKmlFeaturesCtrl">
+      <map zoom="12" center="37.06, -95.68">
+        <kml-layer on-click="showInContextWindow()"
+          url="http://kml-samples.googlecode.com/svn/trunk/kml/Placemark/placemark.kml"></kml-layer>
+      </map>
+      {{description}}
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- =========================================================== -->
+<!--           <div ng-include="'layer-data-simple.html'"></div> -->
+<!-- =========================================================== -->
+<a id="layer-data-simple" ngd-viewport-el></a> 
+<h2> Data Layer (Simple)
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="4" center="-28, 137.883">
+      <map-data load-geo-json="https://storage.googleapis.com/maps-devrel/google.json"></map-data>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ========================================================== -->
+<!--           <div ng-include="'layer-data-style.html'"></div> -->
+<!-- ========================================================== -->
+<a id="layer-data-style" ngd-viewport-el></a> 
+<h2> Data Layer: Styling
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-style">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+      <map zoom="4" center="-28, 137.883">
+        <map-data set-style="{fillColor: 'green', strokeWeight: 1}"
+          load-geo-json="https://storage.googleapis.com/maps-devrel/google.json"></map-data>
+      </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+          <script src="layer-data-event.js"></script>
+<!-- ========================================================== -->
+<!--           <div ng-include="'layer-data-event.html'"></div> -->
+<!-- ========================================================== -->
+<a id="layer-data-event" ngd-viewport-el></a> 
+<h2> Data Layer: Event Handling
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-event">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="layer-data-event.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerDataEventCtrl">
+      <map zoom="4" center="-28, 137.883">
+        <map-data 
+          set-style="styleFunc"
+          on-mouseover="onMouseover()"
+          load-geo-json="https://storage.googleapis.com/maps-devrel/google.json"></map-data>
+      </map>
+      <h1>{{letter}}</h1>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+          <script src="layer-data-dynamic.js"></script>
+<!-- ============================================================ -->
+<!--           <div ng-include="'layer-data-dynamic.html'"></div> -->
+<!-- ============================================================ -->
+<a id="layer-data-dynamic" ngd-viewport-el></a> 
+<h2> Data Layer: Dynamic Styling
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-dynamic">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="layer-data-dynamic.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerDataDynamicCtrl">
+      <map zoom="4" center="-28, 137.883">
+        <map-data 
+          set-style="styleFunc"
+          on-click="onClick()"
+          on-mouseover="onMouseover()"
+          on-mouseout="onMouseout()"
+          load-geo-json="https://storage.googleapis.com/maps-devrel/google.json"></map-data>
+      </map>
+      <h1>{{letter}}</h1>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- =================================================================== -->
+<!--           <div ng-include="'layer-data-quakes-default.html'"></div> -->
+<!-- =================================================================== -->
+<a id="layer-data-quakes-default" ngd-viewport-el></a> 
+<h2> Data Layer: Earthquake data
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="3" center="20, -160">
+      <map-data load-geo-json="quakes.geo.json"></map-data>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+          <script src="layer-data-quakes-simple.js"></script>
+<!-- ================================================================== -->
+<!--           <div ng-include="'layer-data-quakes-simple.html'"></div> -->
+<!-- ================================================================== -->
+<a id="layer-data-quakes-simple" ngd-viewport-el></a> 
+<h2> Data Layer: Earthquake data
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="layer-data-quakes-simple.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerDataQuakesSimpleCtrl">
+      <map zoom="3" center="20, -160">
+        <map-data 
+          set-style="styleFunc"
+          load-geo-json="quakes.geo.json"></map-data>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+          <script src="layer-data-quakes-advanced.js"></script>
+<!-- ==================================================================== -->
+<!--           <div ng-include="'layer-data-quakes-advanced.html'"></div> -->
+<!-- ==================================================================== -->
+<a id="layer-data-quakes-advanced" ngd-viewport-el></a> 
+<h2> Data Layer: Earthquake data (Advanced)
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="layer-data-quakes-advanced.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerDataQuakesAdvCtrl">
+      <map zoom="3" center="20, -160"
+        styles="[{
+            'featureType': 'all',
+            'elementType': 'all',
+            'stylers': [{'visibility': 'off'}]
+          }, {
+            'featureType': 'landscape',
+            'elementType': 'geometry',
+            'stylers': [{'visibility': 'on'}, {'color': '#fcfcfc'}]
+          }, {
+            'featureType': 'water',
+            'elementType': 'labels',
+            'stylers': [{'visibility': 'off'}]
+          }, {
+            'featureType': 'water',
+            'elementType': 'geometry',
+            'stylers': [{'visibility': 'on'}, {'hue': '#5f94ff'}, {'lightness': 60}]
+          }]">
+        <map-data 
+          set-style="styleFunc"
+          load-geo-json="quakes.geo.json"></map-data>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+          <script src="taxi-data.js"></script>
+          <script src="layer-heatmap.js"></script>
+<!-- ======================================================= -->
+<!--           <div ng-include="'layer-heatmap.html'"></div> -->
+<!-- ======================================================= -->
+<a id="layer-heatmap" ngd-viewport-el></a> 
+<h2> Heatmaps
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <style ngd-plnkr-code="css">
+    div[ng-controller=LayerHeatmapCtrl] {
+      position:relative;
+    }
+    div[ng-controller=LayerHeatmapCtrl] #panel{
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+  </style>
+  <div ngd-plnkr-code="js" src="layer-heatmap.js"></div>
+  <div ngd-plnkr-lib="taxi-data.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerHeatmapCtrl">
+      <div id="panel">
+        <button ng-click="toggleHeatmap()">Toggle Heatmap</button>
+        <button ng-click="changeGradient()">Change gradient</button>
+        <button ng-click="changeRadius()">Change radius</button>
+        <button ng-click="changeOpacity()">Change opacity</button>
+      </div>
+      <map zoom="13" center="37.774546, -122.433523" map-type-id="SATELLITE">
+        <heatmap-layer id="foo" data="taxiData"></heatmap>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ========================================================== -->
+<!--           <div ng-include="'layer-mapsengine.html'"></div> -->
+<!-- ========================================================== -->
+<a id="layer-mapsengine" ngd-viewport-el></a> 
+<h2> Maps Engine Layer 
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-mapsengine">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="59.322506, 18.010025" zoom="14">
+      <maps-engine-layer
+        layer-id="06673056454046135537-08896501997766553811">
+      </maps-engine-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+          <script src="layer-dynamicmapsengine.js"></script>
+<!-- ================================================================= -->
+<!--           <div ng-include="'layer-dynamicmapsengine.html'"></div> -->
+<!-- ================================================================= -->
+<a id="layer-dynamicmapsengine" ngd-viewport-el></a> 
+<h2> Dynamic Maps Engine Layer
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-dynamicmapsengine">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="layer-dynamicmapsengine.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="LayerDynamicMapsEngineCtrl">
+      <map center="59.322506, 18.010025" zoom="14">
+        <dynamic-maps-engine-layer
+          suppress-info-windows="true"
+          clickable="true"
+          on-mouseover="onMouseover()"
+          on-mouseout="onMouseout()"
+          layer-id="06673056454046135537-08896501997766553811">
+        </dynamic-maps-engine-layer>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ======================================================================== -->
+<!--           <div ng-include="'mapsenginelayer-noauth-layerid.html'"></div> -->
+<!-- ======================================================================== -->
+<a id="mapsenginelayer-noauth-layerid" ngd-viewport-el></a> 
+<h2> Maps Engine layers by layer ID
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/mapsenginelayer-noauth-layerid">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="42, -99" zoom="5">
+      <maps-engine-layer
+        clickable="true"
+        suppress-info-windows="false"
+        layer-id="10446176163891957399-12677872887550376890">
+      </maps-engine-layer>
+      <maps-engine-layer
+        layer-id="10446176163891957399-01658747114625264102">
+      </maps-engine-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ========================================================================= -->
+<!--           <div ng-include="'mapsenginelayer-noauth-layerkey.html'"></div> -->
+<!-- ========================================================================= -->
+<a id="mapsenginelayer-noauth-layerkey" ngd-viewport-el></a> 
+<h2> Maps Engine layers by layer key
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/mapsenginelayer-noauth-layerkey">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map center="42, -99" zoom="5">
+      <maps-engine-layer
+        map-id="10446176163891957399-13516001307527776624-4"
+        layer-key="layer_00001"
+        clickable="true"
+        suppress-info-windows="false">
+      </maps-engine-layer>
+      <maps-engine-layer
+        map-id="10446176163891957399-13516001307527776624-4"
+        layer-key="layer_00002">
+      </maps-engine-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- =================================================================== -->
+<!--           <div ng-include="'layer-fusiontables-simple.html'"></div> -->
+<!-- =================================================================== -->
+<a id="layer-fusiontables-simple" ngd-viewport-el></a> 
+<h2> Fusion Tables layers
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-simple">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="11" center="41.850033, -87.6500523">
+      <fusion-tables-layer query="{
+        select: 'Geocodable address',
+        from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'}">
+      </fusion-tables-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ================================================================== -->
+<!--           <div ng-include="'layer-fusiontables-query.html'"></div> -->
+<!-- ================================================================== -->
+<a id="layer-fusiontables-query" ngd-viewport-el></a> 
+<h2> Fusion Tables queries
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-query">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="12" center="41.948766, -87.691497">
+      <fusion-tables-layer query="{
+        select: 'address',
+        from: '1d7qpn60tAvG4LEg4jvClZbc1ggp8fIGGvpMGzA',
+        where: 'ridership > 5000'}">
+      </fusion-tables-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ==================================================================== -->
+<!--           <div ng-include="'layer-fusiontables-heatmap.html'"></div> -->
+<!-- ==================================================================== -->
+<a id="layer-fusiontables-heatmap" ngd-viewport-el></a> 
+<h2> Fusion Table heatmaps
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-heatmap">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="3" center="10, -140">
+      <fusion-tables-layer 
+        query= "{ select: 'location',
+          from: '1xWyeuAhIFK_aED1ikkQEGmR8mINSCJO9Vq-BPQ'}",
+        heatmap = "{enabled: true}"
+      </fusion-tables-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ==================================================================== -->
+<!--           <div ng-include="'layer-fusiontables-styling.html'"></div> -->
+<!-- ==================================================================== -->
+<a id="layer-fusiontables-styling" ngd-viewport-el></a> 
+<h2> Fusion Tables styling
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-styling">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="4" center="-25, 133">
+      <fusion-tables-layer 
+        query= "{
+          select: 'geometry',
+          from: '1ertEwm-1bMBhpEwHhtNYT47HQ9k2ki_6sRa-UQ'}",
+        styles="[{
+          polygonOptions: {
+            fillColor: '#00FF00',
+            fillOpacity: 0.3
+          }
+        }, {
+          where: 'birds > 300',
+          polygonOptions: {
+            fillColor: '#0000FF'
+          }
+        }, {
+          where: 'population > 5',
+          polygonOptions: {
+            fillOpacity: 1.0
+          }
+        }]">
+      </fusion-tables-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ====================================================== -->
+<!--           <div ng-include="'layer-georss.html'"></div> -->
+<!-- ====================================================== -->
+<a id="layer-georss" ngd-viewport-el></a> 
+<h2> GeoRSS layers
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-georss">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="4" center="49.496675,-102.65625">
+      <kml-layer 
+        url="http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss">
+      </kml-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ======================================================= -->
+<!--           <div ng-include="'layer-traffic.html'"></div> -->
+<!-- ======================================================= -->
+<a id="layer-traffic" ngd-viewport-el></a> 
+<h2> Traffic Layer
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-traffic">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="13" center="34.04924594193164, -118.24104309082031">
+      <traffic-layer></traffic-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ======================================================= -->
+<!--           <div ng-include="'layer-transit.html'"></div> -->
+<!-- ======================================================= -->
+<a id="layer-transit" ngd-viewport-el></a> 
+<h2> Transit Layer
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-transit">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="13" center="51.501904,-0.115871">
+      <transit-layer></transit-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ======================================================= -->
+<!--           <div ng-include="'layer-weather.html'"></div> -->
+<!-- ======================================================= -->
+<a id="layer-weather" ngd-viewport-el></a> 
+<h2> Weather Layer
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-weather">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="6" center="49.265984,-123.127491">
+      <weather-layer temperature-units="FAHRENHEIT"></weather-layer>
+      <cloud-layer></cloud-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+<!-- ========================================================= -->
+<!--           <div ng-include="'layer-bicycling.html'"></div> -->
+<!-- ========================================================= -->
+<a id="layer-bicycling" ngd-viewport-el></a> 
+<h2> Bicycle Layer
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="14" center="42.3726399, -71.1096528">
+      <bicycling-layer></bicycling-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>
+
+        </section>
+      </div>
+    </div>
+
+  </body>
+</html>

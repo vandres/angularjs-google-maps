@@ -11,14 +11,13 @@
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=weather,visualization,panoramio"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=weather,visualization"></script>
     <!-- build:js https://code.angularjs.org/1.2.26/angular.min.js -->
     <script src="javascripts/angular.js"></script>
     <!-- endbuild -->
     <!-- build:js https://rawgit.com/allenhwkim/angularjs-directives/master/build/ngd.min.js -->
     <script src="angularjs-directives/ngd-code.js"></script>
     <script src="angularjs-directives/ngd-fixed-under.js"></script>
-    <script src="angularjs-directives/ngd-script.js"></script>
     <script src="angularjs-directives/ngd-tree.js"></script>
     <script src="angularjs-directives/ngd-viewport.js"></script>
     <!-- endbuild -->
@@ -42,7 +41,6 @@
     <script src="app/scripts/directives/fusion-tables-layer.js"></script>
     <script src="app/scripts/directives/kml-layer.js"></script>
     <script src="app/scripts/directives/maps-engine-layer.js"></script>
-    <script src="app/scripts/directives/panoramio-layer.js"></script>
     <script src="app/scripts/directives/heatmap-layer.js"></script>
     <script src="app/scripts/directives/traffic-layer.js"></script>
     <script src="app/scripts/directives/transit-layer.js"></script>
@@ -105,8 +103,6 @@
           <div ng-include="'layer-transit.html'"></div>
           <div ng-include="'layer-weather.html'"></div>
           <div ng-include="'layer-bicycling.html'"></div>
-          <div ng-include="'layer-panoramio.html'"></div>
-          <div ng-include="'layer-panoramio-tags.html'"></div>
         </section>
       </div>
     </div>

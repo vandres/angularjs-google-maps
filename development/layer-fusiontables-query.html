@@ -1,0 +1,16 @@
+<a id="layer-fusiontables-query" ngd-viewport-el></a> 
+<h2> Fusion Tables queries
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-query">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="html">
+    <map zoom="12" center="41.948766, -87.691497">
+      <fusion-tables-layer query="{
+        select: 'address',
+        from: '1d7qpn60tAvG4LEg4jvClZbc1ggp8fIGGvpMGzA',
+        where: 'ridership > 5000'}">
+      </fusion-tables-layer>
+    </map>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>

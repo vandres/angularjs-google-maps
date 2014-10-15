@@ -1,0 +1,23 @@
+<a id="maptype-base" ngd-viewport-el></a> 
+<h2> Basic map types
+  <a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-base">Google Source</a>
+</h2>
+<div ngd-plnkr-scope>
+  <div ngd-plnkr-code="js" src="maptype-base.js"></div>
+  <div ngd-plnkr-code="html">
+    <div ng-controller="MapTypeBaseCtrl">
+      <map zoom="10" center="41.850033,-87.6500523"
+        on-maptypeid_changed="mapTypeChanged()"
+        street-view-control="false"
+        map-type-id="coordinate"
+        map-type-control-options="{
+          mapTypeIds: ['coordinate', 'ROADMAP'],
+          style: 'DROPDOWN_MENU'
+        }">
+        <map-type name="coordinate" object="CoordMapType">
+        </map-type>
+      </map>
+    </div>
+  </div>
+  <div ngd-plnkr-show module-name="myapp"></div>
+</div>

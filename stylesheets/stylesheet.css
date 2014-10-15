@@ -490,3 +490,8 @@ aside#sidebar .active {
   display:table;
 }
 
+a[ngd-viewport-el]::before {
+  height: 0px;
+  content: " ";
+}
+

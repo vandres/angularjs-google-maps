@@ -75,10 +75,6 @@ gulp.task('build-html', function() {
                  code;
         }
       ))
-      .pipe(replace(/href="([^#]*)##/g, function(match) {
-          return match.replace("##","#");
-        }
-      ))
       .pipe(gulp.dest('.'));
 });
 

@@ -52,6 +52,11 @@ gulp.task('build-html', function() {
           return '<script src="' + $1+'"></script>';
         }
       ))
+      /* replace .js files to link to development directory */
+      .pipe(replace( /src="[^\.]+\.js"/g, function(_m) {
+          return _m.replace(/src="/g, 'src="/development/');
+        }
+      ))
       /* remove development only codes */
       .pipe(replace( /<!-- build:development-only -->[^!]+<!-- endbuild -->/gm, ''))
       /* replace ng-include to the actual contents of a file */
@@ -59,6 +64,10 @@ gulp.task('build-html', function() {
         /^[ \t]+<[^ ]+ ng-include="'([^']+)'"><\/[^>]+>/gm,
         function(match, $1) {
           var code = fs.readFileSync("./development/"+$1);
+          /* replace .js files to link to development directory */
+          code = (""+code).replace(/src="[^\.]+\.js"/g, function(_m) {
+            return _m.replace(/src="/g, 'src="/development/');
+          });
           return "<!-- " + match.replace(/./g, "=")  + " -->\n" +
                  "<!-- " + match + " -->\n" +
                  "<!-- " + match.replace(/./g, "=")  + " -->\n" +

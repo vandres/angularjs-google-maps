@@ -48,13 +48,13 @@ gulp.task('build-html', function() {
       /* replace source files to a single file */
       .pipe(replace(
         /<!-- build:js ([^ ]+) -->[^\!]+<!-- endbuild -->/gm, 
-        function(natch, $1) {
+        function(_, $1) {
           return '<script src="' + $1+'"></script>';
         }
       ))
       /* replace .js files to link to development directory */
-      .pipe(replace( /src="[^\.]+\.js"/g, function(_m) {
-          return _m.replace(/src="/g, 'src="development/');
+      .pipe(replace( /src="([^\.]+)\.js"/g, function(_, $1) {
+          return 'src="development/' + $1 + '.js"';
         }
       ))
       /* remove development only codes */
@@ -65,16 +65,20 @@ gulp.task('build-html', function() {
         function(match, $1) {
           var code = fs.readFileSync("./development/"+$1);
           /* replace .js files to link to development directory */
-          code = (""+code).replace(/src="[^\.]+\.js"/g, function(_m) {
-            return _m.replace(/src="/g, 'src="development/');
+          code = (""+code).replace(/src="([^\.]+)\.js"/g, function(_, $$1) {
+            return 'src="development/' + $$1 + '.js"';
           });
+          code = code.replace("quakes.geo.json", "development/quakes.geo.json");
           return "<!-- " + match.replace(/./g, "=")  + " -->\n" +
                  "<!-- " + match + " -->\n" +
                  "<!-- " + match.replace(/./g, "=")  + " -->\n" +
                  code;
         }
       ))
-      .pipe(replace(/href="##/g, 'href="#'))
+      .pipe(replace(/href="([^#]*)##/g, function(match) {
+          return match.replace("##","#");
+        }
+      ))
       .pipe(gulp.dest('.'));
 });
 

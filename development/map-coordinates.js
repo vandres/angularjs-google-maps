@@ -60,10 +60,5 @@
         $scope.tileCoordinate = new google.maps.Point(
             Math.floor($scope.pixelCoordinate.x / TILE_SIZE),
             Math.floor($scope.pixelCoordinate.y / TILE_SIZE));
-
-        var infoWindow = map.infoWindows[1];
-        var compiledEl = $compile(infoWindow.template)($scope);
-        infoWindow.setContent(compiledEl.html());
-        infoWindow.open(map);
       });
     });

@@ -54,7 +54,7 @@ gulp.task('build-html', function() {
       ))
       /* replace .js files to link to development directory */
       .pipe(replace( /src="[^\.]+\.js"/g, function(_m) {
-          return _m.replace(/src="/g, 'src="/development/');
+          return _m.replace(/src="/g, 'src="development/');
         }
       ))
       /* remove development only codes */
@@ -66,7 +66,7 @@ gulp.task('build-html', function() {
           var code = fs.readFileSync("./development/"+$1);
           /* replace .js files to link to development directory */
           code = (""+code).replace(/src="[^\.]+\.js"/g, function(_m) {
-            return _m.replace(/src="/g, 'src="/development/');
+            return _m.replace(/src="/g, 'src="development/');
           });
           return "<!-- " + match.replace(/./g, "=")  + " -->\n" +
                  "<!-- " + match + " -->\n" +

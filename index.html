@@ -256,7 +256,7 @@ Showing static coordinates of Chicago
   <div ngd-plnkr-code="js" src="development/map-coordinates.js"></div>
   <div ngd-plnkr-code="html">
     <div ng-controller="MapCoordinatesCtrl">
-      <map center="41.850033,-87.6500523" zoom="3">
+      <map center="41.850033,-87.6500523" zoom="3" on-idle="showInfoWindow(1)">
         <info-window id="1" position="41.850033,-87.6500523">
           <div ng-non-bindable>
             Chicago, IL<br/>

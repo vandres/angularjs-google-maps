@@ -61,7 +61,7 @@ gulp.task('build-html', function() {
       .pipe(replace( /<!-- build:development-only -->[^!]+<!-- endbuild -->/gm, ''))
       /* replace ng-include to the actual contents of a file */
       .pipe(replace(
-        /^[ \t]+<[^ ]+ ng-include="'([^']+)'"><\/[^>]+>/gm,
+        /^[ \t]+<[\w-\'\" ]+ ng-include="'([^']+)'"[^>]*><\/[^>]+>/gm,
         function(match, $1) {
           var code = fs.readFileSync("./development/"+$1);
           /* replace .js files to link to development directory */

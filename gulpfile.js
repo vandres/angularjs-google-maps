@@ -7,6 +7,7 @@ var tap = require('gulp-tap');
 var bump = require('gulp-bump');
 var shell = require('gulp-shell');
 var runSequence = require('run-sequence');
+var rename = require("gulp-rename");
 var bumpVersion = function(type) {
   type = type || 'patch';
   var version = '';
@@ -36,39 +37,44 @@ gulp.task('bump:major', ['build'], function() { bumpVersion('major'); });
 
 gulp.task('build-html', function() {
   return gulp.src([
-      './development/index.html',
-      './development/basics.html',
-      './development/events.html',
-      './development/controls.html',
-      './development/styles.html',
-      './development/drawings.html',
-      './development/layers.html',
-      './development/maptypes.html'
-    ])
-    /* replace source files to a single file */
-    .pipe(replace(
-      /<!-- build:js ([^ ]+) -->[^\!]+<!-- endbuild -->/gm, 
-      function(natch, $1) {
-        return '<script src="' + $1+'"></script>';
-      }
-    ))
-    /* remove development only codes */
-    .pipe(replace( /<!-- build:development-only -->[^!]+<!-- endbuild -->/gm, ''))
-    /* replace ng-include to the actual contents of a file */
-    .pipe(replace(
-      /^[ \t]+<[^ ]+ ng-include="'([^']+)'"><\/[^>]+>/gm,
-      function(match, $1) {
-        var code = fs.readFileSync("./development/"+$1);
-        return "<!-- " + match.replace(/./g, "=")  + " -->\n" +
-               "<!-- " + match + " -->\n" +
-               "<!-- " + match.replace(/./g, "=")  + " -->\n" +
-               code;
-      }
-    ))
-    .pipe(replace(/href="##/g, 'href="#'))
-    .pipe(gulp.dest('.'));
+        './development/basics.html',
+        './development/events.html',
+        './development/controls.html',
+        './development/styles.html',
+        './development/drawings.html',
+        './development/layers.html',
+        './development/maptypes.html'
+      ])
+      /* replace source files to a single file */
+      .pipe(replace(
+        /<!-- build:js ([^ ]+) -->[^\!]+<!-- endbuild -->/gm, 
+        function(natch, $1) {
+          return '<script src="' + $1+'"></script>';
+        }
+      ))
+      /* remove development only codes */
+      .pipe(replace( /<!-- build:development-only -->[^!]+<!-- endbuild -->/gm, ''))
+      /* replace ng-include to the actual contents of a file */
+      .pipe(replace(
+        /^[ \t]+<[^ ]+ ng-include="'([^']+)'"><\/[^>]+>/gm,
+        function(match, $1) {
+          var code = fs.readFileSync("./development/"+$1);
+          return "<!-- " + match.replace(/./g, "=")  + " -->\n" +
+                 "<!-- " + match + " -->\n" +
+                 "<!-- " + match.replace(/./g, "=")  + " -->\n" +
+                 code;
+        }
+      ))
+      .pipe(replace(/href="##/g, 'href="#'))
+      .pipe(gulp.dest('.'));
+});
+
+gulp.task('rename', function() {
+  return gulp.src('./basics.html')
+    .pipe(rename("index.html"))
+    .pipe(gulp.dest(".")); 
 });
 
 gulp.task('build', function(callback) {
-  runSequence('build-html', callback);
+  runSequence('build-html', 'rename',  callback);
 });

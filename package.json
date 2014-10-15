@@ -14,7 +14,7 @@
   "devDependencies": {
     "compression": "~1.0.6",
     "gulp-bump": "~0.1.9",
-    "gulp-rename": "~1.2.0",
+    "gulp-rename": "^1.2.0",
     "gulp-replace": "~0.3.0",
     "gulp-rev": "~0.4.0",
     "gulp-shell": "~0.2.7",

@@ -3,8 +3,9 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/polyggon-dragbable">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
-    <map zoom="1" center="24.886, -70.268" map-type-id="TERRAIN">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/polygon-draggable.png" />
+    <map init-event="init-map" zoom="1" center="24.886, -70.268" map-type-id="TERRAIN">
      <shape name="polygon" 
        paths="[[25.774, -80.190], [18.466, -66.118], [32.321, -64.757]]"
        geodesic="true"

@@ -3,8 +3,9 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/control-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
-    <map center="-33, 151" zoom="4" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/control-simple.png" />
+    <map init-event="init-map" center="-33, 151" zoom="4" 
       pan-control="false"
       zoom-control="false"
       scale-control="true">

@@ -3,10 +3,11 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/maptype-base">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="maptype-base.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/maptype-base.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="MapTypeBaseCtrl">
-      <map zoom="10" center="41.850033,-87.6500523"
+      <img src="images/maptype-base.png" />
+      <map init-event="init-map" zoom="10" center="41.850033,-87.6500523"
         on-maptypeid_changed="mapTypeChanged()"
         street-view-control="false"
         map-type-id="coordinate"

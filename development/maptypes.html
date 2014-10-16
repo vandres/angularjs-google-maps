@@ -33,6 +33,7 @@
     <script src="app/scripts/directives/shape.js"></script>
     <script src="app/scripts/directives/info-window.js"></script>
     <script src="app/scripts/directives/map-type.js"></script>
+    <script src="app/scripts/directives/overlay-map-type.js"></script>
     <script src="app/scripts/directives/custom-control.js"></script>
     <script src="app/scripts/directives/map-data.js"></script>
     <script src="app/scripts/directives/bicycling-layer.js"></script>
@@ -49,7 +50,7 @@
     <script src="app/scripts/services/navigator_geolocation.js"></script>
     <script src="app/scripts/services/attr2_options.js"></script>
     <!-- endbuild -->
-    <script src="app.js"></script>
+    <script src="javascripts/app.js"></script>
   </head>
 
   <body ngd-viewport>
@@ -62,16 +63,16 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h2>Map Types</h2>
-          <script src="maptype-base.js"></script>
+          <script src="javascripts/maptype-base.js"></script>
           <div ng-include="'maptype-base.html'"></div>
-          <script src="maptype-overlay.js"></script>
+          <script src="javascripts/maptype-overlay.js"></script>
           <div ng-include="'maptype-overlay.html'"></div>
-          <script src="maptype-image.js"></script>
+          <script src="javascripts/maptype-image.js"></script>
           <div ng-include="'maptype-image.html'"></div>
-          <script src="maptype-image-overlay.js"></script>
+          <script src="javascripts/maptype-image-overlay.js"></script>
           <div ng-include="'maptype-image-overlay.html'"></div>
           <div ng-include="'aerial-simple.html'"></div>
-          <script src="aerial-rotation.js"></script>
+          <script src="javascripts/aerial-rotation.js"></script>
           <div ng-include="'aerial-rotation.html'"></div>
         </section>
       </div>

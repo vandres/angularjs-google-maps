@@ -3,7 +3,7 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-remove">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="overlay-remove.js"></div>
+  <div ngd-plnkr-code="js" src="javascripts/overlay-remove.js"></div>
   <style ngd-plnkr-code="css">
     div[ng-controller=OverlayRemoveCtrl] {
       position: relative;
@@ -19,13 +19,14 @@
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="OverlayRemoveCtrl">
       <div id="panel">
         <input ng-click="remove()" type=button value="Remove overlay">
         <input ng-click="add()" type=button value="Restore overlay">
       </div>
-      <map zoom="13" center="40.740, -74.18">
+      <img src="images/overlay-remove.png" />
+      <map init-event="init-map" zoom="13" center="40.740, -74.18">
        <shape name="image" id="foo"
          url="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"
          bounds="[[40.712216, -74.22655], [40.773941, -74.12544]]">

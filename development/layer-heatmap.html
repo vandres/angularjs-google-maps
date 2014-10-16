@@ -18,9 +18,9 @@
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="js" src="layer-heatmap.js"></div>
+  <div ngd-plnkr-code="js" src="javascripts/layer-heatmap.js"></div>
   <div ngd-plnkr-lib="taxi-data.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="LayerHeatmapCtrl">
       <div id="panel">
         <button ng-click="toggleHeatmap()">Toggle Heatmap</button>
@@ -28,7 +28,8 @@
         <button ng-click="changeRadius()">Change radius</button>
         <button ng-click="changeOpacity()">Change opacity</button>
       </div>
-      <map zoom="13" center="37.774546, -122.433523" map-type-id="SATELLITE">
+      <img src="images/layer-heatmap.png" />
+      <map init-event="init-map" zoom="13" center="37.774546, -122.433523" map-type-id="SATELLITE">
         <heatmap-layer id="foo" data="taxiData"></heatmap>
       </map>
     </div>

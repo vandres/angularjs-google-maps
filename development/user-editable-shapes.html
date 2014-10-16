@@ -3,8 +3,9 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/user-editable-shapes">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
-    <map zoom="9" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/user-editable-shapes.png" />
+    <map init-event="init-map" zoom="9" 
       center="44.5452, -78.5389">
      <shape name="rectangle" 
        editable="true"

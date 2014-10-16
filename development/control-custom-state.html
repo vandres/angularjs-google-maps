@@ -4,10 +4,11 @@
 </h2>
 Adds a control to the map that returns the user to the control's defined home
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="control-custom-state.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/control-custom-state.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="ControlCustomStateCtrl">
-      <map center="41.850033, -87.6500523" zoom="6">
+      <img src="images/control-custom-state.png" />
+      <map init-event="init-map" center="41.850033, -87.6500523" zoom="6">
         <custom-control id="go-home" position="TOP_RIGHT" index="1" on-click="goHome()">
           <div style="background-color: black; color:#fff;cursor:pointer; margin:10px">Go Home</div>
         </custom-control>

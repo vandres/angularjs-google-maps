@@ -1,9 +1,9 @@
-<a id="overlay-hideshow" ngd-viewport-el></a> 
+<ahtml id="overlay-hideshow" ngd-viewport-el></a> 
 <h2> Overlay show/hide
   <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-hideshow">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="overlay-hideshow.js"></div>
+  <div ngd-plnkr-code="js" src="javascripts/overlay-hideshow.js"></div>
   <div ngd-plnkr-lib="USGSOverlay.js"></div>
   <style ngd-plnkr-code="css">
     div[ng-controller=OverlayHideshowCtrl] {
@@ -20,13 +20,14 @@
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="OverlayHideshowCtrl">
       <div id="panel">
         <input ng-click="toggleVisibility()" type=button value="Toggle Visibility">
         <input ng-click="toggleDOMAttachment()" type=button value="Toggle DOM Attachment">
       </div>
-      <map zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE">
+      <img src="images/overlay-hideshow.png" />
+      <map init-event="init-map" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE">
       </map>
     </div>
   </div>

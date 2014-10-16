@@ -6,10 +6,11 @@
    When the user changes the bounds of the rectangle,
    an info window pops up displaying the new bounds.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="rectangle-event.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/rectangle-event.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="RectangleEventCtrl">
-      <map zoom="9" center="44.5452, -78.5389">
+      <img src="images/rectangle-event.png" />
+      <map init-event="init-map" zoom="9" center="44.5452, -78.5389">
         <shape name="rectangle" 
           editable="true"
           draggable="true"

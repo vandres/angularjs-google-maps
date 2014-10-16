@@ -3,8 +3,9 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
-    <map zoom="14" center="42.3726399, -71.1096528">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/layer-bicycling.png" />
+    <map init-event="init-map" zoom="14" center="42.3726399, -71.1096528">
       <bicycling-layer></bicycling-layer>
     </map>
   </div>

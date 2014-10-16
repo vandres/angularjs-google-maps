@@ -6,8 +6,9 @@
    as the icon for a marker. The resulting icon is a star-shaped symbol
    with a pale yellow fill and a thick yellow border.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
-    <map center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/marker-symbol-custom.png" />
+    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
       <marker position="-25.363882,131.044922" 
       icon="{
         path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',

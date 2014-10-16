@@ -4,10 +4,11 @@
 </h2>
 This example creates a rectangle based on the viewport on any 'zoom-changed' event.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="rectangle-zoom.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/rectangle-zoom.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="RectangleZoomCtrl">
-      <map zoom="11" 
+      <img src="images/rectangle-zoom.png" />
+      <map init-event="init-map" zoom="11" 
         center="33.6803003, -116.173894" 
         map-type-id="TERRAIN"
         on-zoom_changed="zoomChanged()">

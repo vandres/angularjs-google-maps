@@ -18,14 +18,15 @@
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="js" src="polyline-remove.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/polyline-remove.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="PolylineRemoveCtrl">
       <div id="panel">
         <input ng-click="removeLine()" type=button value="Remove Line">
         <input ng-click="addLine()" type=button value="Restore Line">
       </div>
-      <map zoom="3" center="0, -180" map-type-id="TERRAIN">
+      <img src="images/polyline-remove.png" />
+      <map init-event="init-map" zoom="3" center="0, -180" map-type-id="TERRAIN">
         <shape name="polyline" id="foo"
           path="[
             [37.772323, -122.214897],

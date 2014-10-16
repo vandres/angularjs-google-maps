@@ -5,10 +5,11 @@
 </h2>
 Click map to place markers
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="event-arguments.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/event-arguments.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="EventArgumentsCtrl">
-      <map zoom="4" center="-25.363882, 131.044922" on-click="placeMarker()">
+      <img src="images/event-arguments.png" />
+      <map init-event="init-map" zoom="4" center="-25.363882, 131.044922" on-click="placeMarker()">
       </map>
     </div>
   </div>

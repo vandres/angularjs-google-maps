@@ -7,7 +7,7 @@ drop them on the map consecutively rather than all at once.
 This example shows how to use setTimeout() to space
 your markers' animation.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="marker-animations-iteration.js"></div>
+  <div ngd-plnkr-code="js" src="javascripts/marker-animations-iteration.js"></div>
   <style ngd-plnkr-code="css">
     div[ng-controller] {
       position: relative;
@@ -23,12 +23,13 @@ your markers' animation.
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="MarkerAnimationsIterationCtrl">
       <div id="panel">
         <button id="drop" ng-click="addMarker()">Drop Markers</button>
        </div>
-      <map center="52.520816, 13.410186" zoom="12">
+      <img src="images/marker-animations-iteration.png" />
+      <map init-event="init-map" center="52.520816, 13.410186" zoom="12">
       </map>
     </div>
   </div>

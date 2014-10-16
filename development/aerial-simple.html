@@ -3,9 +3,10 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/aerial-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/aerial-simple.png" />
     <map 
-      center="36.964645, -122.01523" 
+      init-event="init-map" center="36.964645, -122.01523" 
       zoom="18" 
       tilt="45" 
       map-type-id="SATELLITE">

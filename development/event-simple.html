@@ -5,10 +5,11 @@
 </h2>
 Click the marker to zoom and drag and watch it comes back after 3 seconds.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="event-simple.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/event-simple.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="EventSimpleCtrl">
-      <map zoom="4" center="-25.363882, 131.044922" on-center-changed="centerChanged()">
+      <img src="images/event-simple.png" />
+      <map init-event="init-map" zoom="4" center="-25.363882, 131.044922" on-center-changed="centerChanged()">
         <marker position="-25.363882, 131.044922" on-click="click()" title="Click to zoom"></marker> 
       </map>
     </div>

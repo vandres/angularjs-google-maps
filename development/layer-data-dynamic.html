@@ -3,10 +3,11 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-dynamic">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="layer-data-dynamic.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/layer-data-dynamic.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="LayerDataDynamicCtrl">
-      <map zoom="4" center="-28, 137.883">
+      <img src="images/layer-data-dynamic.png" />
+      <map init-event="init-map" zoom="4" center="-28, 137.883">
         <map-data 
           set-style="styleFunc"
           on-click="onClick()"

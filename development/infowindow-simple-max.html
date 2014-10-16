@@ -3,8 +3,9 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
-    <map center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/infowindow-simple-max.png" />
+    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
       <marker id="foo" position="-25.363882,131.044922"
         on-click="showInfoWindow(event, 'bar')">
       </marker>

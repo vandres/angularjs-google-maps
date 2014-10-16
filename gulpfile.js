@@ -37,45 +37,35 @@ gulp.task('bump:major', ['build'], function() { bumpVersion('major'); });
 
 gulp.task('build-html', function() {
   return gulp.src([
-        './development/basics.html',
-        './development/events.html',
-        './development/controls.html',
-        './development/styles.html',
-        './development/drawings.html',
-        './development/layers.html',
-        './development/maptypes.html'
-      ])
-      /* replace source files to a single file */
-      .pipe(replace(
-        /<!-- build:js ([^ ]+) -->[^\!]+<!-- endbuild -->/gm, 
-        function(_, $1) {
-          return '<script src="' + $1+'"></script>';
-        }
-      ))
-      /* replace .js files to link to development directory */
-      .pipe(replace( /src="([^\.]+)\.js"/g, function(_, $1) {
-          return 'src="development/' + $1 + '.js"';
-        }
-      ))
-      /* remove development only codes */
-      .pipe(replace( /<!-- build:development-only -->[^!]+<!-- endbuild -->/gm, ''))
-      /* replace ng-include to the actual contents of a file */
-      .pipe(replace(
-        /^[ \t]+<[\w-\'\" ]+ ng-include="'([^']+)'"[^>]*><\/[^>]+>/gm,
-        function(match, $1) {
-          var code = fs.readFileSync("./development/"+$1);
-          /* replace .js files to link to development directory */
-          code = (""+code).replace(/src="([^\.]+)\.js"/g, function(_, $$1) {
-            return 'src="development/' + $$1 + '.js"';
-          });
-          code = code.replace("quakes.geo.json", "development/quakes.geo.json");
-          return "<!-- " + match.replace(/./g, "=")  + " -->\n" +
-                 "<!-- " + match + " -->\n" +
-                 "<!-- " + match.replace(/./g, "=")  + " -->\n" +
-                 code;
-        }
-      ))
-      .pipe(gulp.dest('.'));
+    './development/basics.html',
+    './development/events.html',
+    './development/controls.html',
+    './development/styles.html',
+    './development/drawings.html',
+    './development/layers.html',
+    './development/maptypes.html'
+    ])
+    /* replace source files to a single file */
+    .pipe(replace(
+      /<!-- build:js ([^ ]+) -->[^\!]+<!-- endbuild -->/gm, 
+      function(_, $1) {
+        return '<script src="' + $1+'"></script>';
+      }
+    ))
+    /* remove development only codes */
+    .pipe(replace( /<!-- build:development-only -->[^!]+<!-- endbuild -->/gm, ''))
+    /* replace ng-include to the actual contents of a file */
+    .pipe(replace(
+      /^[ \t]+<[\w-\'\" ]+ ng-include="'([^']+)'"[^>]*><\/[^>]+>/gm,
+      function(match, $1) {
+        var code = fs.readFileSync("./development/"+$1);
+        return "<!-- " + match.replace(/./g, "=")  + " -->\n" +
+               "<!-- " + match + " -->\n" +
+               "<!-- " + match.replace(/./g, "=")  + " -->\n" +
+               code;
+      }
+    ))
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('rename', function() {

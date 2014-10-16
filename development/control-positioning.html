@@ -3,8 +3,9 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/control-positioning">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html">
-    <map center="-28.643387, 153.612224" zoom="12" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+      <img src="images/control-positioning.png" />
+    <map init-event="init-map" center="-28.643387, 153.612224" zoom="12" 
       pan-control="true"
       pan-control-options="{position:'TOP_RIGHT'}"
       map-type-control="true"

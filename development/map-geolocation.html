@@ -6,11 +6,11 @@ Note: This example requires that you consent to location sharing when
 prompted by your browser. If you see a blank space instead of the map, this
 is probably because you have denied permission for location sharing.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="js" src="map-geolocation.js"></div>
-  <div ngd-plnkr-code="html">
+  <div ngd-plnkr-code="js" src="javascripts/map-geolocation.js"></div>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
     <div ng-controller="MapGeolocationCtrl">
-      <br/>
-      <map center="0,0" zoom="6"></map>
+      <img src="images/map-geolocation.png" />
+      <map init-event="init-map" center="0,0" zoom="6"></map>
     </div>
   </div>
   <div ngd-plnkr-show module-name="myapp"></div>

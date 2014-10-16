@@ -68,8 +68,7 @@ a:hover {
 }
 
 header {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
@@ -473,7 +472,7 @@ aside#sidebar .active {
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
 
-*[ngd-plnkr-code]:not([src]) {
+*[ngd-plnkr-code]:not([src]) { // no javascrpt with src attribute
   margin-top: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -482,6 +481,13 @@ aside#sidebar .active {
 
 *[ngd-plnkr-code="html"] {
   min-height: 200px;
+  position: relative
+}
+
+*[ngd-plnkr-code="html"] img {
+  display:block;
+  position: absolute;
+  height: 300px;
 }
 
 *[ngd-plnkr-code]:after {

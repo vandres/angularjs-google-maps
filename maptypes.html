@@ -211,10 +211,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/maptype-base.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map45')">
     <div ng-controller="MapTypeBaseCtrl">
-      <img src="images/maptype-base.png" />
-      <map init-event="init-map" zoom="10" center="41.850033,-87.6500523"
+      <map init-event="init-map45" style="background:url(images/maptype-base.png) center" zoom="10" center="41.850033,-87.6500523"
         on-maptypeid_changed="mapTypeChanged()"
         street-view-control="false"
         map-type-id="coordinate"
@@ -240,9 +239,8 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/maptype-overlay.js">
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/maptype-overlay.png" />
-    <map init-event="init-map" zoom="10" center="41.850033,-87.6500523">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map48')">
+    <map init-event="init-map48" style="background:url(images/maptype-overlay.png) center" zoom="10" center="41.850033,-87.6500523">
       <overlay-map-type object="CoordMapType2" index="0">
       </overlay-map-type>
     </map>
@@ -260,10 +258,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/maptype-image.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map47')">
     <div ng-controller="MapTypeImageCtrl">
-      <img src="images/maptype-image.png" />
-      <map init-event="init-map" zoom="1" center="0,0"
+      <map init-event="init-map47" style="background:url(images/maptype-image.png) center" zoom="1" center="0,0"
         street-view-control="false"
         map-type-id="moon"
         map-type-control-options="{
@@ -287,9 +284,8 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/maptype-image-overlay.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-    <img src="images/maptype-image-overlay.png" />
-    <map init-event="init-map" zoom="18" center="37.78313383212, -122.4039494991302">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map46')">
+    <map init-event="init-map46" style="background:url(images/maptype-image-overlay.png) center" zoom="18" center="37.78313383212, -122.4039494991302">
       <overlay-map-type object="imageMapType" init-method="push">
       </overlay-map-type>
     </map>
@@ -305,10 +301,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/aerial-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/aerial-simple.png" />
-    <map 
-      init-event="init-map" center="36.964645, -122.01523" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map2')">
+    <map init-event="init-map2" style="background:url(images/aerial-simple.png) center" center="36.964645, -122.01523" 
       zoom="18" 
       tilt="45" 
       map-type-id="SATELLITE">
@@ -327,11 +321,10 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/aerial-rotation.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map1')">
     <div ng-controller="AerialRotationCtrl">
       <input type="button" value="Auto Rotate" ng-click="autoRotate();">
-      <img src="images/aerial-rotation.png" />
-      <map init-event="init-map" center="45.518970, -122.672899"
+      <map init-event="init-map1" style="background:url(images/aerial-rotation.png) center" center="45.518970, -122.672899"
         zoom="18"
         map-type-id="SATELLITE"
         tilt="45"

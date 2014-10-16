@@ -7,10 +7,9 @@ using a DROP animation. Clicking on the marker will toggle
 the animation between a BOUNCE animation and no animation.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/marker-animations.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map52')">
     <div ng-controller="MarkerAnimationsCtrl">
-      <img src="images/marker-animations.png" />
-      <map init-event="init-map" center="59.32522, 18.07002" zoom="13">
+      <map init-event="init-map52" style="background:url(images/marker-animations.png) center" center="59.32522, 18.07002" zoom="13">
         <marker position="59.327383, 18.06747" 
           on-click="toggleBounce()"
           animation="DROP"

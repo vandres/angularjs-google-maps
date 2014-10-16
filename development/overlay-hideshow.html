@@ -20,14 +20,13 @@
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map57')">
     <div ng-controller="OverlayHideshowCtrl">
       <div id="panel">
         <input ng-click="toggleVisibility()" type=button value="Toggle Visibility">
         <input ng-click="toggleDOMAttachment()" type=button value="Toggle DOM Attachment">
       </div>
-      <img src="images/overlay-hideshow.png" />
-      <map init-event="init-map" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE">
+      <map init-event="init-map57" style="background:url(images/overlay-hideshow.png) center" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE">
       </map>
     </div>
   </div>

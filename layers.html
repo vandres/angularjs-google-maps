@@ -209,9 +209,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-kml">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-kml.png" />
-      <map init-event="init-map" zoom="11" center="41.875696,-87.624207">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map34')">
+      <map init-event="init-map34" style="background:url(images/layer-kml.png) center" zoom="11" center="41.875696,-87.624207">
         <kml-layer url="http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml"></kml-layer>
       </map>
   </div>
@@ -228,10 +227,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-kml-features.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map33')">
     <div ng-controller="LayerKmlFeaturesCtrl">
-      <img src="images/layer-kml-features.png" />
-      <map init-event="init-map" zoom="12" center="37.06, -95.68">
+      <map init-event="init-map33" style="background:url(images/layer-kml-features.png) center" zoom="12" center="37.06, -95.68">
         <kml-layer on-click="showInContextWindow()"
           url="http://kml-samples.googlecode.com/svn/trunk/kml/Placemark/placemark.kml"></kml-layer>
       </map>
@@ -249,9 +247,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-data-simple.png" />
-    <map init-event="init-map" zoom="4" center="-28, 137.883">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map24')">
+    <map init-event="init-map24" style="background:url(images/layer-data-simple.png) center" zoom="4" center="-28, 137.883">
       <map-data load-geo-json="https://storage.googleapis.com/maps-devrel/google.json"></map-data>
     </map>
   </div>
@@ -266,9 +263,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-style">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-data-style.png" />
-      <map init-event="init-map" zoom="4" center="-28, 137.883">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map25')">
+      <map init-event="init-map25" style="background:url(images/layer-data-style.png) center" zoom="4" center="-28, 137.883">
         <map-data set-style="{fillColor: 'green', strokeWeight: 1}"
           load-geo-json="https://storage.googleapis.com/maps-devrel/google.json"></map-data>
       </map>
@@ -286,10 +282,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-data-event.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map20')">
     <div ng-controller="LayerDataEventCtrl">
-      <img src="images/layer-data-event.png" />
-      <map init-event="init-map" zoom="4" center="-28, 137.883">
+      <map init-event="init-map20" style="background:url(images/layer-data-event.png) center" zoom="4" center="-28, 137.883">
         <map-data 
           set-style="styleFunc"
           on-mouseover="onMouseover()"
@@ -311,10 +306,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-data-dynamic.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map19')">
     <div ng-controller="LayerDataDynamicCtrl">
-      <img src="images/layer-data-dynamic.png" />
-      <map init-event="init-map" zoom="4" center="-28, 137.883">
+      <map init-event="init-map19" style="background:url(images/layer-data-dynamic.png) center" zoom="4" center="-28, 137.883">
         <map-data 
           set-style="styleFunc"
           on-click="onClick()"
@@ -336,9 +330,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-data-quakes-default.png" />
-    <map init-event="init-map" zoom="3" center="20, -160">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map22')">
+    <map init-event="init-map22" style="background:url(images/layer-data-quakes-default.png) center" zoom="3" center="20, -160">
       <map-data load-geo-json="javascripts/quakes.geo.json"></map-data>
     </map>
   </div>
@@ -355,10 +348,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-data-quakes-simple.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map23')">
     <div ng-controller="LayerDataQuakesSimpleCtrl">
-      <img src="images/layer-data-quakes-simple.png" />
-      <map init-event="init-map" zoom="3" center="20, -160">
+      <map init-event="init-map23" style="background:url(images/layer-data-quakes-simple.png) center" zoom="3" center="20, -160">
         <map-data 
           set-style="styleFunc"
           load-geo-json="javascripts/quakes.geo.json"></map-data>
@@ -378,10 +370,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-data-quakes-advanced.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map21')">
     <div ng-controller="LayerDataQuakesAdvCtrl">
-      <img src="images/layer-data-quakes-advanced.png" />
-      <map init-event="init-map" zoom="3" center="20, -160"
+      <map init-event="init-map21" style="background:url(images/layer-data-quakes-advanced.png) center" zoom="3" center="20, -160"
         styles="[{
             'featureType': 'all',
             'elementType': 'all',
@@ -435,7 +426,7 @@
   </style>
   <div ngd-plnkr-code="js" src="javascripts/layer-heatmap.js"></div>
   <div ngd-plnkr-lib="taxi-data.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map32')">
     <div ng-controller="LayerHeatmapCtrl">
       <div id="panel">
         <button ng-click="toggleHeatmap()">Toggle Heatmap</button>
@@ -443,8 +434,7 @@
         <button ng-click="changeRadius()">Change radius</button>
         <button ng-click="changeOpacity()">Change opacity</button>
       </div>
-      <img src="images/layer-heatmap.png" />
-      <map init-event="init-map" zoom="13" center="37.774546, -122.433523" map-type-id="SATELLITE">
+      <map init-event="init-map32" style="background:url(images/layer-heatmap.png) center" zoom="13" center="37.774546, -122.433523" map-type-id="SATELLITE">
         <heatmap-layer id="foo" data="taxiData"></heatmap>
       </map>
     </div>
@@ -460,9 +450,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-mapsengine">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-mapsengine.png" />
-    <map init-event="init-map" center="59.322506, 18.010025" zoom="14">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map35')">
+    <map init-event="init-map35" style="background:url(images/layer-mapsengine.png) center" center="59.322506, 18.010025" zoom="14">
       <maps-engine-layer
         layer-id="06673056454046135537-08896501997766553811">
       </maps-engine-layer>
@@ -481,10 +470,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-dynamicmapsengine.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map26')">
     <div ng-controller="LayerDynamicMapsEngineCtrl">
-      <img src="images/layer-dynamicmapsengine.png" />
-      <map init-event="init-map" center="59.322506, 18.010025" zoom="14">
+      <map init-event="init-map26" style="background:url(images/layer-dynamicmapsengine.png) center" center="59.322506, 18.010025" zoom="14">
         <dynamic-maps-engine-layer
           suppress-info-windows="true"
           clickable="true"
@@ -506,9 +494,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/mapsenginelayer-noauth-layerid">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/mapsenginelayer-noauth-layerid.png" />
-    <map init-event="init-map" center="42, -99" zoom="5">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map43')">
+    <map init-event="init-map43" style="background:url(images/mapsenginelayer-noauth-layerid.png) center" center="42, -99" zoom="5">
       <maps-engine-layer
         clickable="true"
         suppress-info-windows="false"
@@ -530,9 +517,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/mapsenginelayer-noauth-layerkey">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/mapsenginelayer-noauth-layerkey.png" />
-    <map init-event="init-map" center="42, -99" zoom="5">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map44')">
+    <map init-event="init-map44" style="background:url(images/mapsenginelayer-noauth-layerkey.png) center" center="42, -99" zoom="5">
       <maps-engine-layer
         map-id="10446176163891957399-13516001307527776624-4"
         layer-key="layer_00001"
@@ -556,9 +542,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-fusiontables-simple.png" />
-    <map init-event="init-map" zoom="11" center="41.850033, -87.6500523">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map29')">
+    <map init-event="init-map29" style="background:url(images/layer-fusiontables-simple.png) center" zoom="11" center="41.850033, -87.6500523">
       <fusion-tables-layer query="{
         select: 'Geocodable address',
         from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'}">
@@ -576,9 +561,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-query">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-fusiontables-query.png" />
-    <map init-event="init-map" zoom="12" center="41.948766, -87.691497">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map28')">
+    <map init-event="init-map28" style="background:url(images/layer-fusiontables-query.png) center" zoom="12" center="41.948766, -87.691497">
       <fusion-tables-layer query="{
         select: 'address',
         from: '1d7qpn60tAvG4LEg4jvClZbc1ggp8fIGGvpMGzA',
@@ -597,9 +581,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-heatmap">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-fusiontables-heatmap.png" />
-    <map init-event="init-map" zoom="3" center="10, -140">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map27')">
+    <map init-event="init-map27" style="background:url(images/layer-fusiontables-heatmap.png) center" zoom="3" center="10, -140">
       <fusion-tables-layer 
         query= "{ select: 'location',
           from: '1xWyeuAhIFK_aED1ikkQEGmR8mINSCJO9Vq-BPQ'}",
@@ -618,9 +601,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-fusiontables-styling">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-fusiontables-styling.png" />
-    <map init-event="init-map" zoom="4" center="-25, 133">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map30')">
+    <map init-event="init-map30" style="background:url(images/layer-fusiontables-styling.png) center" zoom="4" center="-25, 133">
       <fusion-tables-layer 
         query= "{
           select: 'geometry',
@@ -655,9 +637,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-georss">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-georss.png" />
-    <map init-event="init-map" zoom="4" center="49.496675,-102.65625">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map31')">
+    <map init-event="init-map31" style="background:url(images/layer-georss.png) center" zoom="4" center="49.496675,-102.65625">
       <kml-layer 
         url="http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss">
       </kml-layer>
@@ -674,9 +655,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-traffic">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-traffic.png" />
-    <map init-event="init-map" zoom="13" center="34.04924594193164, -118.24104309082031">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map36')">
+    <map init-event="init-map36" style="background:url(images/layer-traffic.png) center" zoom="13" center="34.04924594193164, -118.24104309082031">
       <traffic-layer></traffic-layer>
     </map>
   </div>
@@ -691,9 +671,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-transit">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-transit.png" />
-    <map init-event="init-map" zoom="13" center="51.501904,-0.115871">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map37')">
+    <map init-event="init-map37" style="background:url(images/layer-transit.png) center" zoom="13" center="51.501904,-0.115871">
       <transit-layer></transit-layer>
     </map>
   </div>
@@ -708,9 +687,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-weather">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-weather.png" />
-    <map init-event="init-map" zoom="6" center="49.265984,-123.127491">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map38')">
+    <map init-event="init-map38" style="background:url(images/layer-weather.png) center" zoom="6" center="49.265984,-123.127491">
       <weather-layer temperature-units="FAHRENHEIT"></weather-layer>
       <cloud-layer></cloud-layer>
     </map>
@@ -726,9 +704,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-bicycling">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/layer-bicycling.png" />
-    <map init-event="init-map" zoom="14" center="42.3726399, -71.1096528">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map18')">
+    <map init-event="init-map18" style="background:url(images/layer-bicycling.png) center" zoom="14" center="42.3726399, -71.1096528">
       <bicycling-layer></bicycling-layer>
     </map>
   </div>

@@ -4,10 +4,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/map-projection-simple.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map41')">
     <div ng-controller="MapProjectionSimpleCtrl">
-      <img src="images/map-projection-simple.png" />
-      <map init-event="init-map" zoom="0" center="0,0"
+      <map init-event="init-map41" style="background:url(images/map-projection-simple.png) center" zoom="0" center="0,0"
         on-click="alertLocation()"
         street-view-control="false"
         map-type-id="gallPetersMap"

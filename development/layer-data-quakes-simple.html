@@ -4,10 +4,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-data-quakes-simple.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map23')">
     <div ng-controller="LayerDataQuakesSimpleCtrl">
-      <img src="images/layer-data-quakes-simple.png" />
-      <map init-event="init-map" zoom="3" center="20, -160">
+      <map init-event="init-map23" style="background:url(images/layer-data-quakes-simple.png) center" zoom="3" center="20, -160">
         <map-data 
           set-style="styleFunc"
           load-geo-json="javascripts/quakes.geo.json"></map-data>

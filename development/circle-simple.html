@@ -5,10 +5,9 @@
 This example creates circles on the map, representing populations in North America.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/circle-simple.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map3')">
     <div ng-controller="CircleSimpleCtrl">
-      <img src="images/circle-simple.png" />
-      <map init-event="init-map" center="37.09024, -95.712891" zoom="4" mayTypeId="TERRAIN">
+      <map init-event="init-map3" style="background:url(images/circle-simple.png) center" center="37.09024, -95.712891" zoom="4" mayTypeId="TERRAIN">
         <shape name="circle" ng-repeat="city in cities"
           stroke-color="#FF0000"
           stroke-opacity="0.8"

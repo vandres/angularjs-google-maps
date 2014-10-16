@@ -4,10 +4,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/polygon-arrays.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map64')">
     <div ng-controller="PolygonArraysCtrl">
-      <img src="images/polygon-arrays.png" />
-      <map init-event="init-map" zoom="5" 
+      <map init-event="init-map64" style="background:url(images/polygon-arrays.png) center" zoom="5" 
         center="24.886436490787712, -70.2685546875" 
         map-type-id="TERRAIN">
        <shape name="polygon" 

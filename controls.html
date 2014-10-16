@@ -209,9 +209,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/control-disableUI">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/control-disableUI.png" />
-    <map init-event="init-map" center="-33, 151" zoom="4" disable-default-u-i="true" />
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map6')">
+    <map init-event="init-map6" style="background:url(images/control-disableUI.png) center" center="-33, 151" zoom="4" disable-default-u-i="true" />
   </div>
   <div ngd-plnkr-show module-name="myapp"></div>
 </div>
@@ -224,9 +223,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/control-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/control-simple.png" />
-    <map init-event="init-map" center="-33, 151" zoom="4" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map9')">
+    <map init-event="init-map9" style="background:url(images/control-simple.png) center" center="-33, 151" zoom="4" 
       pan-control="false"
       zoom-control="false"
       scale-control="true">
@@ -243,9 +241,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/control-options">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-    <img src="images/control-options.png" />
-    <map init-event="init-map" center="-33, 151" zoom="4" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map7')">
+    <map init-event="init-map7" style="background:url(images/control-options.png) center" center="-33, 151" zoom="4" 
       pan-control="true"
       map-type-control="true"
       map-type-control-options="{style:'DROPDOWN_MENU'}"
@@ -264,9 +261,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/control-positioning">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/control-positioning.png" />
-    <map init-event="init-map" center="-28.643387, 153.612224" zoom="12" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map8')">
+    <map init-event="init-map8" style="background:url(images/control-positioning.png) center" center="-28.643387, 153.612224" zoom="12" 
       pan-control="true"
       pan-control-options="{position:'TOP_RIGHT'}"
       map-type-control="true"
@@ -293,10 +289,9 @@ This custom control simply returns the user to Chicago when clicked.
 Drag map around, then click 'home' button to go back to Chicago.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/control-custom.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map5')">
     <div ng-controller="ControlCustomCtrl">
-      <img src="images/control-custom.png" />
-      <map init-event="init-map" center="41.850033, -87.6500523" zoom="6">
+      <map init-event="init-map5" style="background:url(images/control-custom.png) center" center="41.850033, -87.6500523" zoom="6">
         <custom-control id="home" position="TOP_RIGHT" index="1" on-click="click()">
           <div style="background-color: black; color:#fff;cursor:pointer">Home1</div>
         </custom-control>
@@ -317,10 +312,9 @@ Drag map around, then click 'home' button to go back to Chicago.
 Adds a control to the map that returns the user to the control's defined home
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/control-custom-state.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map4')">
     <div ng-controller="ControlCustomStateCtrl">
-      <img src="images/control-custom-state.png" />
-      <map init-event="init-map" center="41.850033, -87.6500523" zoom="6">
+      <map init-event="init-map4" style="background:url(images/control-custom-state.png) center" center="41.850033, -87.6500523" zoom="6">
         <custom-control id="go-home" position="TOP_RIGHT" index="1" on-click="goHome()">
           <div style="background-color: black; color:#fff;cursor:pointer; margin:10px">Go Home</div>
         </custom-control>

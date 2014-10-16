@@ -209,9 +209,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/marker-simple.png" />
-    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map54')">
+    <map init-event="init-map54" style="background:url(images/marker-simple.png) center" center="-25.363882,131.044922" zoom="4">
       <marker position="-25.363882,131.044922" title="Hello World!"></marker>
     </map>
   </div>
@@ -245,15 +244,14 @@ Click on map to add a marker. Click button to show, hide, or remove markers<br/>
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map53')">
     <div ng-controller="MarkerRemoveCtrl">
       <div id="panel">
         <input ng-click="hideMarkers()" type=button value="Hide Markers">
         <input ng-click="showMarkers()" type=button value="Show All Markers">
         <input ng-click="deleteMarkers()" type=button value="Delete Markers">
       </div>
-      <img src="images/marker-remove.png" />
-      <map init-event="init-map" center="37.7699298, -122.4469157" zoom="12" on-click="addMarker()">
+      <map init-event="init-map53" style="background:url(images/marker-remove.png) center" center="37.7699298, -122.4469157" zoom="12" on-click="addMarker()">
         <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
       </map>
     </div>
@@ -269,9 +267,8 @@ Click on map to add a marker. Click button to show, hide, or remove markers<br/>
   <a href="https://developers.google.com/maps/documentation/javascript/examples/icon-somple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/icon-simple.png" />
-    <map init-event="init-map" zoom="4" center="-33, 151">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map15')">
+    <map init-event="init-map15" style="background:url(images/icon-simple.png) center" zoom="4" center="-33, 151">
       <marker position="-33.890542, 151.274856" icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"></marker>
     </map>
   </div>
@@ -288,10 +285,9 @@ Click on map to add a marker. Click button to show, hide, or remove markers<br/>
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/icon-complex.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map14')">
     <div ng-controller="IconComplexCtrl">
-      <img src="images/icon-complex.png" />
-      <map init-event="init-map" zoom="10" center="-33.9, 151.2">
+      <map init-event="init-map14" style="background:url(images/icon-complex.png) center" zoom="10" center="-33.9, 151.2">
         <marker ng-repeat="beach in beaches"
           icon="{{image}}"
           shape="{{shape}}"
@@ -317,10 +313,9 @@ using a DROP animation. Clicking on the marker will toggle
 the animation between a BOUNCE animation and no animation.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/marker-animations.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map52')">
     <div ng-controller="MarkerAnimationsCtrl">
-      <img src="images/marker-animations.png" />
-      <map init-event="init-map" center="59.32522, 18.07002" zoom="13">
+      <map init-event="init-map52" style="background:url(images/marker-animations.png) center" center="59.32522, 18.07002" zoom="13">
         <marker position="59.327383, 18.06747" 
           on-click="toggleBounce()"
           animation="DROP"
@@ -360,13 +355,12 @@ your markers' animation.
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map51')">
     <div ng-controller="MarkerAnimationsIterationCtrl">
       <div id="panel">
         <button id="drop" ng-click="addMarker()">Drop Markers</button>
        </div>
-      <img src="images/marker-animations-iteration.png" />
-      <map init-event="init-map" center="52.520816, 13.410186" zoom="12">
+      <map init-event="init-map51" style="background:url(images/marker-animations-iteration.png) center" center="52.520816, 13.410186" zoom="12">
       </map>
     </div>
   </div>
@@ -383,9 +377,8 @@ your markers' animation.
 This example displays a marker at the center of Australia.
 When the user clicks the marker, an info window opens.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/infowindow-simple.png" />
-    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map17')">
+    <map init-event="init-map17" style="background:url(images/infowindow-simple.png) center" center="-25.363882,131.044922" zoom="4">
       <marker id="foo" position="-25.363882,131.044922"
         on-click="showInfoWindow(event, 'bar')">
       </marker>
@@ -423,9 +416,8 @@ When the user clicks the marker, an info window opens.
   <a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple-max">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/infowindow-simple-max.png" />
-    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map16')">
+    <map init-event="init-map16" style="background:url(images/infowindow-simple-max.png) center" center="-25.363882,131.044922" zoom="4">
       <marker id="foo" position="-25.363882,131.044922"
         on-click="showInfoWindow(event, 'bar')">
       </marker>
@@ -463,9 +455,8 @@ When the user clicks the marker, an info window opens.
   <a href="https://developers.google.com/maps/documentation/javascript/examples/polyline-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/polyline-simple.png" />
-   <map init-event="init-map" zoom="3" center="0, -180" map-type-id="TERRAIN">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map71')">
+   <map init-event="init-map71" style="background:url(images/polyline-simple.png) center" zoom="3" center="0, -180" map-type-id="TERRAIN">
      <shape name="polyline" 
        path="[
          [37.772323, -122.214897],
@@ -508,14 +499,13 @@ When the user clicks the marker, an info window opens.
     }
   </style>
   <div ngd-plnkr-code="js" src="javascripts/polyline-remove.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map70')">
     <div ng-controller="PolylineRemoveCtrl">
       <div id="panel">
         <input ng-click="removeLine()" type=button value="Remove Line">
         <input ng-click="addLine()" type=button value="Restore Line">
       </div>
-      <img src="images/polyline-remove.png" />
-      <map init-event="init-map" zoom="3" center="0, -180" map-type-id="TERRAIN">
+      <map init-event="init-map70" style="background:url(images/polyline-remove.png) center" zoom="3" center="0, -180" map-type-id="TERRAIN">
         <shape name="polyline" id="foo"
           path="[
             [37.772323, -122.214897],
@@ -544,10 +534,9 @@ When the user clicks the marker, an info window opens.
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/polyline-complex.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map69')">
     <div ng-controller="PolylineComplexCtrl">
-      <img src="images/polyline-complex.png" />
-      <map init-event="init-map" zoom="7" center="41.879535, -87.624333"
+      <map init-event="init-map69" style="background:url(images/polyline-complex.png) center" zoom="7" center="41.879535, -87.624333"
         on-click="addMarkerAndPath()">
       </map>
     </div>
@@ -563,9 +552,8 @@ When the user clicks the marker, an info window opens.
   <a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/polygon-simple.png" />
-    <map init-event="init-map" zoom="5" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map68')">
+    <map init-event="init-map68" style="background:url(images/polygon-simple.png) center" zoom="5" 
       center="24.886436490787712, -70.2685546875" 
       map-type-id="TERRAIN">
      <shape name="polygon" 
@@ -596,10 +584,9 @@ When the user clicks the marker, an info window opens.
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/polygon-arrays.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map64')">
     <div ng-controller="PolygonArraysCtrl">
-      <img src="images/polygon-arrays.png" />
-      <map init-event="init-map" zoom="5" 
+      <map init-event="init-map64" style="background:url(images/polygon-arrays.png) center" zoom="5" 
         center="24.886436490787712, -70.2685546875" 
         map-type-id="TERRAIN">
        <shape name="polygon" 
@@ -629,9 +616,8 @@ When the user clicks the marker, an info window opens.
   <a href="https://developers.google.com/maps/documentation/javascript/examples/polygon-autoclose">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/polygon-autoclose.png" />
-    <map init-event="init-map" zoom="5" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map65')">
+    <map init-event="init-map65" style="background:url(images/polygon-autoclose.png) center" zoom="5" 
       center="24.886436490787712, -70.2685546875" 
       map-type-id="TERRAIN">
      <shape name="polygon" 
@@ -662,10 +648,9 @@ When the user clicks the marker, an info window opens.
 This example creates circles on the map, representing populations in North America.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/circle-simple.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map3')">
     <div ng-controller="CircleSimpleCtrl">
-      <img src="images/circle-simple.png" />
-      <map init-event="init-map" center="37.09024, -95.712891" zoom="4" mayTypeId="TERRAIN">
+      <map init-event="init-map3" style="background:url(images/circle-simple.png) center" center="37.09024, -95.712891" zoom="4" mayTypeId="TERRAIN">
         <shape name="circle" ng-repeat="city in cities"
           stroke-color="#FF0000"
           stroke-opacity="0.8"
@@ -689,9 +674,8 @@ This example creates circles on the map, representing populations in North Ameri
   <a href="https://developers.google.com/maps/documentation/javascript/examples/rectangle-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/rectangle-simple.png" />
-    <map init-event="init-map" zoom="11" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map73')">
+    <map init-event="init-map73" style="background:url(images/rectangle-simple.png) center" zoom="11" 
       center="33.678176, -116.242568" 
       map-type-id="TERRAIN">
      <shape name="rectangle" 
@@ -721,10 +705,9 @@ This example creates circles on the map, representing populations in North Ameri
 This example creates a rectangle based on the viewport on any 'zoom-changed' event.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/rectangle-zoom.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map74')">
     <div ng-controller="RectangleZoomCtrl">
-      <img src="images/rectangle-zoom.png" />
-      <map init-event="init-map" zoom="11" 
+      <map init-event="init-map74" style="background:url(images/rectangle-zoom.png) center" zoom="11" 
         center="33.6803003, -116.173894" 
         map-type-id="TERRAIN"
         on-zoom_changed="zoomChanged()">
@@ -749,9 +732,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
   <a href="https://developers.google.com/maps/documentation/javascript/examples/user-editable-shapes">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/user-editable-shapes.png" />
-    <map init-event="init-map" zoom="9" 
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map75')">
+    <map init-event="init-map75" style="background:url(images/user-editable-shapes.png) center" zoom="9" 
       center="44.5452, -78.5389">
      <shape name="rectangle" 
        editable="true"
@@ -770,9 +752,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
   <a href="https://developers.google.com/maps/documentation/javascript/examples/polyggon-dragbable">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/polygon-draggable.png" />
-    <map init-event="init-map" zoom="1" center="24.886, -70.268" map-type-id="TERRAIN">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map67')">
+    <map init-event="init-map67" style="background:url(images/polygon-draggable.png) center" zoom="1" center="24.886, -70.268" map-type-id="TERRAIN">
      <shape name="polygon" 
        paths="[[25.774, -80.190], [18.466, -66.118], [32.321, -64.757]]"
        geodesic="true"
@@ -811,10 +792,9 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
    an info window pops up displaying the new bounds.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/rectangle-event.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map72')">
     <div ng-controller="RectangleEventCtrl">
-      <img src="images/rectangle-event.png" />
-      <map init-event="init-map" zoom="9" center="44.5452, -78.5389">
+      <map init-event="init-map72" style="background:url(images/rectangle-event.png) center" zoom="9" center="44.5452, -78.5389">
         <shape name="rectangle" 
           editable="true"
           draggable="true"
@@ -845,9 +825,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
   <a href="https://developers.google.com/maps/documentation/javascript/examples/groundoverlay-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/groundoverlay-simple.png" />
-   <map init-event="init-map" zoom="13" center="40.740, -74.18">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map13')">
+   <map init-event="init-map13" style="background:url(images/groundoverlay-simple.png) center" zoom="13" center="40.740, -74.18">
      <shape name="image" 
        url="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"
        bounds="[[40.712216, -74.22655], [40.773941, -74.12544]]">
@@ -882,14 +861,13 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map58')">
     <div ng-controller="OverlayRemoveCtrl">
       <div id="panel">
         <input ng-click="remove()" type=button value="Remove overlay">
         <input ng-click="add()" type=button value="Restore overlay">
       </div>
-      <img src="images/overlay-remove.png" />
-      <map init-event="init-map" zoom="13" center="40.740, -74.18">
+      <map init-event="init-map58" style="background:url(images/overlay-remove.png) center" zoom="13" center="40.740, -74.18">
        <shape name="image" id="foo"
          url="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"
          bounds="[[40.712216, -74.22655], [40.773941, -74.12544]]">
@@ -913,10 +891,9 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/overlay-simple.js"></div>
   <div ngd-plnkr-lib="drawings/USGSOverlay.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map59')">
     <div ng-controller="OverlaySimpleCtrl">
-      <img src="images/overlay-simple.png" />
-      <map init-event="init-map" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE"></map>
+      <map init-event="init-map59" style="background:url(images/overlay-simple.png) center" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE"></map>
     </div>
   </div>
   <div ngd-plnkr-show module-name="myapp"></div>
@@ -949,14 +926,13 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map57')">
     <div ng-controller="OverlayHideshowCtrl">
       <div id="panel">
         <input ng-click="toggleVisibility()" type=button value="Toggle Visibility">
         <input ng-click="toggleDOMAttachment()" type=button value="Toggle DOM Attachment">
       </div>
-      <img src="images/overlay-hideshow.png" />
-      <map init-event="init-map" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE">
+      <map init-event="init-map57" style="background:url(images/overlay-hideshow.png) center" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE">
       </map>
     </div>
   </div>
@@ -975,9 +951,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
   The symbol uses one of the predefined vector paths ('CIRCLE') supplied by the
   Google Maps JavaScript API.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/marker-symbol-predefined.png" />
-    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map56')">
+    <map init-event="init-map56" style="background:url(images/marker-symbol-predefined.png) center" center="-25.363882,131.044922" zoom="4">
       <marker position="-25.363882,131.044922" 
         icon="{path:'CIRCLE', scale: 10}"
         dragglele="true"></marker>
@@ -997,9 +972,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
    as the icon for a marker. The resulting icon is a star-shaped symbol
    with a pale yellow fill and a thick yellow border.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/marker-symbol-custom.png" />
-    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map55')">
+    <map init-event="init-map55" style="background:url(images/marker-symbol-custom.png) center" center="-25.363882,131.044922" zoom="4">
       <marker position="-25.363882,131.044922" 
       icon="{
         path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
@@ -1025,10 +999,9 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/overlay-symbol-animate.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map60')">
     <div ng-controller="OverlaySymbolAnimateCtrl">
-      <img src="images/overlay-symbol-animate.png" />
-      <map init-event="init-map" zoom="5" center="20.291, 153.027" map-type-id="TERRAIN">
+      <map init-event="init-map60" style="background:url(images/overlay-symbol-animate.png) center" zoom="5" center="20.291, 153.027" map-type-id="TERRAIN">
         <shape name="polyline" id="foo"
            icons="[{
              icon: {
@@ -1054,9 +1027,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
   <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-arrow">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/overlay-symbol-arrow.png" />
-    <map init-event="init-map" zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map61')">
+    <map init-event="init-map61" style="background:url(images/overlay-symbol-arrow.png) center" zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
       <shape name="polyline" id="foo"
         path="[[22.291, 153.027], [18.291, 153.027]]"
         icons="[{
@@ -1079,9 +1051,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
   <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-custom">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/overlay-symbol-custom.png" />
-    <map init-event="init-map" zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map62')">
+    <map init-event="init-map62" style="background:url(images/overlay-symbol-custom.png) center" zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
       <shape name="polyline" id="foo"
         path="[[22.291, 153.027], [18.291, 153.027]]"
         icons="[
@@ -1125,9 +1096,8 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
   <a href="https://developers.google.com/maps/documentation/javascript/examples/overlay-symbol-dashed">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/overlay-symbol-dashed.png" />
-     <map init-event="init-map" zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map63')">
+     <map init-event="init-map63" style="background:url(images/overlay-symbol-dashed.png) center" zoom="6" center="20.291, 153.027" map-type-id="TERRAIN">
         <shape name="polyline" id="foo"
           path="[[22.291, 153.027], [18.291, 153.027]]"
           stroke-opacity="0",

@@ -222,9 +222,8 @@
   <a href="https://developers.google.com/maps/documentation/javascript/examples/map-simple">Google Source</a>
 </h2>
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-    <img src="images/map-simple.png" />
-    <map init-event="init-map" center="-34.397, 150.644" zoom="8"></map>
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map42')">
+    <map init-event="init-map42" style="background:url(images/map-simple.png) center" center="-34.397, 150.644" zoom="8"></map>
   </div>
   <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
@@ -240,10 +239,10 @@
 Showing static coordinates of Chicago
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/map-coordinates.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map39')">
     <div ng-controller="MapCoordinatesCtrl">
-      <img src="images/map-coordinates.png" />
-      <map init-event="init-map" center="41.850033,-87.6500523" zoom="3" on-idle="showInfoWindow(1)">
+      <map init-event="init-map39" style="background:url(images/map-coordinates.png) center" 
+        center="41.850033,-87.6500523" zoom="3" on-idle="showInfoWindow(1)">
         <info-window id="1" position="41.850033,-87.6500523">
           <div ng-non-bindable>
             Chicago, IL<br/>
@@ -272,10 +271,9 @@ prompted by your browser. If you see a blank space instead of the map, this
 is probably because you have denied permission for location sharing.
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/map-geolocation.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map40')">
     <div ng-controller="MapGeolocationCtrl">
-      <img src="images/map-geolocation.png" />
-      <map init-event="init-map" center="0,0" zoom="6"></map>
+      <map init-event="init-map40" style="background:url(images/map-geolocation.png) center" center="0,0" zoom="6"></map>
     </div>
   </div>
   <div ngd-plnkr-show module-name="myapp"></div>
@@ -292,10 +290,9 @@ is probably because you have denied permission for location sharing.
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/map-projection-simple.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map41')">
     <div ng-controller="MapProjectionSimpleCtrl">
-      <img src="images/map-projection-simple.png" />
-      <map init-event="init-map" zoom="0" center="0,0"
+      <map init-event="init-map41" style="background:url(images/map-projection-simple.png) center" zoom="0" center="0,0"
         on-click="alertLocation()"
         street-view-control="false"
         map-type-id="gallPetersMap"

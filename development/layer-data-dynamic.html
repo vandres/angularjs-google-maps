@@ -4,10 +4,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-data-dynamic.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map19')">
     <div ng-controller="LayerDataDynamicCtrl">
-      <img src="images/layer-data-dynamic.png" />
-      <map init-event="init-map" zoom="4" center="-28, 137.883">
+      <map init-event="init-map19" style="background:url(images/layer-data-dynamic.png) center" zoom="4" center="-28, 137.883">
         <map-data 
           set-style="styleFunc"
           on-click="onClick()"

@@ -4,10 +4,9 @@
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/layer-data-event.js"></div>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map20')">
     <div ng-controller="LayerDataEventCtrl">
-      <img src="images/layer-data-event.png" />
-      <map init-event="init-map" zoom="4" center="-28, 137.883">
+      <map init-event="init-map20" style="background:url(images/layer-data-event.png) center" zoom="4" center="-28, 137.883">
         <map-data 
           set-style="styleFunc"
           on-mouseover="onMouseover()"

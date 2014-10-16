@@ -21,15 +21,14 @@ Click on map to add a marker. Click button to show, hide, or remove markers<br/>
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map53')">
     <div ng-controller="MarkerRemoveCtrl">
       <div id="panel">
         <input ng-click="hideMarkers()" type=button value="Hide Markers">
         <input ng-click="showMarkers()" type=button value="Show All Markers">
         <input ng-click="deleteMarkers()" type=button value="Delete Markers">
       </div>
-      <img src="images/marker-remove.png" />
-      <map init-event="init-map" center="37.7699298, -122.4469157" zoom="12" on-click="addMarker()">
+      <map init-event="init-map53" style="background:url(images/marker-remove.png) center" center="37.7699298, -122.4469157" zoom="12" on-click="addMarker()">
         <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
       </map>
     </div>

@@ -23,13 +23,12 @@ your markers' animation.
       border: 1px solid #999;
     }
   </style>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map51')">
     <div ng-controller="MarkerAnimationsIterationCtrl">
       <div id="panel">
         <button id="drop" ng-click="addMarker()">Drop Markers</button>
        </div>
-      <img src="images/marker-animations-iteration.png" />
-      <map init-event="init-map" center="52.520816, 13.410186" zoom="12">
+      <map init-event="init-map51" style="background:url(images/marker-animations-iteration.png) center" center="52.520816, 13.410186" zoom="12">
       </map>
     </div>
   </div>

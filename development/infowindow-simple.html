@@ -5,9 +5,8 @@
 This example displays a marker at the center of Australia.
 When the user clicks the marker, an info window opens.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map')">
-      <img src="images/infowindow-simple.png" />
-    <map init-event="init-map" center="-25.363882,131.044922" zoom="4">
+  <div ngd-plnkr-code="html" ng-click="$broadcast('init-map17')">
+    <map init-event="init-map17" style="background:url(images/infowindow-simple.png) center" center="-25.363882,131.044922" zoom="4">
       <marker id="foo" position="-25.363882,131.044922"
         on-click="showInfoWindow(event, 'bar')">
       </marker>

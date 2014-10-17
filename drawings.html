@@ -18,6 +18,7 @@
 
     <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script>
     <script src="javascripts/app.js"></script>
+    <script src="javascripts/google-analytics.js"></script>
   </head>
 
   <body ngd-viewport>
@@ -214,7 +215,7 @@
       <marker position="-25.363882,131.044922" title="Hello World!"></marker>
     </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/marker-remove.js"></script>
@@ -272,7 +273,7 @@ Click on map to add a marker. Click button to show, hide, or remove markers<br/>
       <marker position="-33.890542, 151.274856" icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"></marker>
     </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/icon-complex.js"></script>
@@ -405,7 +406,7 @@ When the user clicks the marker, an info window opens.
       </info-window>
     </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
 <!-- =============================================================== -->
@@ -444,7 +445,7 @@ When the user clicks the marker, an info window opens.
       </info-window>
     </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
 <!-- ========================================================= -->
@@ -471,7 +472,7 @@ When the user clicks the marker, an info window opens.
      </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/polyline-remove.js"></script> 
@@ -571,7 +572,7 @@ When the user clicks the marker, an info window opens.
      </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/polygon-arrays.js"></script> 
@@ -634,7 +635,7 @@ When the user clicks the marker, an info window opens.
      </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/circle-simple.js"></script>
@@ -691,7 +692,7 @@ This example creates circles on the map, representing populations in North Ameri
      </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/rectangle-zoom.js"></script>
@@ -741,7 +742,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
      </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
 <!-- =========================================================== -->
@@ -776,7 +777,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
      </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/rectangle-event.js"></script>
@@ -833,7 +834,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
      </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/overlay-remove.js"></script>
@@ -890,7 +891,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/overlay-simple.js"></div>
-  <div ngd-plnkr-lib="drawings/USGSOverlay.js"></div>
+  <div ngd-plnkr-lib="https://rawgit.com/allenhwkim/angularjs-google-maps/gh-pages/javascripts/USGSOverlay.js"></div>
   <div ngd-plnkr-code="html" ng-click="$broadcast('init-map59')">
     <div ng-controller="OverlaySimpleCtrl">
       <map init-event="init-map59" style="background:url(images/overlay-simple.png) center" zoom="11" center="62.323907, -150.109291" map-type-id="SATELLITE"></map>
@@ -910,7 +911,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
 </h2>
 <div ngd-plnkr-scope>
   <div ngd-plnkr-code="js" src="javascripts/overlay-hideshow.js"></div>
-  <div ngd-plnkr-lib="USGSOverlay.js"></div>
+  <div ngd-plnkr-lib="https://rawgit.com/allenhwkim/angularjs-google-maps/gh-pages/javascripts/USGSOverlay.js"></div>
   <style ngd-plnkr-code="css">
     div[ng-controller=OverlayHideshowCtrl] {
       position: relative;
@@ -958,7 +959,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
         dragglele="true"></marker>
     </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
 <!-- ============================================================== -->
@@ -986,7 +987,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
       dragglele="true"></marker>
     </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
           <script src="javascripts/overlay-symbol-animate.js"></script>
@@ -1040,7 +1041,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
       </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
 <!-- =============================================================== -->
@@ -1085,7 +1086,7 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
       </shape>
    </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
 <!-- =============================================================== -->
@@ -1113,9 +1114,27 @@ This example creates a rectangle based on the viewport on any 'zoom-changed' eve
         </shape>
      </map>
   </div>
-  <div ngd-plnkr-show module-name="myapp"></div>
+  <div ngd-plnkr-show module-name="ngMap"></div>
 </div>
  
+          
+<!-- ========================================================= -->
+<!--           <div ng-include="'partials/disqus.html'"></div> -->
+<!-- ========================================================= -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'angularjs-google-maps'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
         </section>
       </div>
     </div>

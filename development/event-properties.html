@@ -4,7 +4,7 @@
 </h2>
 When zoom level changed, the contents of infoWindow also updates.
 <div ngd-plnkr-scope>
-  <div ngd-plnkr-js="javascripts/event-properties.js">
+  <div ngd-plnkr-code="js" src="javascripts/event-properties.js">
   <div ngd-plnkr-code="html" ng-click="$broadcast('init-map11')">
     <div ng-controller="EventPropertiesCtrl">
       <map init-event="init-map11" style="background:url(images/event-properties.png) center" zoom="4" center="-25.363882, 131.044922" on-zoom_changed="zoomChanged()">

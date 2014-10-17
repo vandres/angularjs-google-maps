@@ -5,6 +5,7 @@ app.config(function(PlnkrDefaultProvider) {
     "http://code.angularjs.org/1.2.25/angular.js",
     "https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"
   ]);
+  PlnkrDefaultProvider.setAppJs("var app=angular.module('myapp', ['ngMap']);");
 });
 app.run(function($location, $rootScope, $anchorScroll) {
   try {

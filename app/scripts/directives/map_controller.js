@@ -13,7 +13,6 @@ ngMap.MapController = function() {
   this.map = null;
   this.options = {};
   this._objects = [];
-  this._bounds = new google.maps.LatLngBounds();
 
   /**
    * Add a marker to map and $scope.markers
@@ -37,12 +36,16 @@ ngMap.MapController = function() {
       this.map.markers[marker.id || len] = marker;
 
       if (this.options.center && this.options.center === 'auto') {
-        this._bounds.extend(marker.position);
-        if (this._bounds.getNorthEast().equals(this._bounds.getSouthWest())) {
-          var extendPoint = new google.maps.LatLng(this._bounds.getNorthEast().lat() + 0.01, this._bounds.getNorthEast().lng() + 0.01);
-          this._bounds.extend(extendPoint);
+        var bounds = new google.maps.LatLngBounds();
+        angular.forEach(this.map.markers, function(marker) {
+          bounds.extend(marker.position);
+        });
+
+        if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
+          var extendPoint = new google.maps.LatLng(bounds.getNorthEast().lat() + 0.01, bounds.getNorthEast().lng() + 0.01);
+          bounds.extend(extendPoint);
         }
-        this.map.fitBounds(this._bounds);
+        this.map.fitBounds(bounds);
       }
     } else {
       this._objects.push(marker);
